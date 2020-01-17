@@ -19,8 +19,8 @@ export class AuthenticationService {
     return this.currentUserSubject.value;
   }
 
-  login(username, password) {
-    return this.http.post<any>('http://ec2-13-234-78-142.ap-south-1.compute.amazonaws.com:8000/api/token/', { username, password })
+  login(email, password) {
+    return this.http.post<any>('http://ec2-13-234-78-142.ap-south-1.compute.amazonaws.com:8000/api/token/', { email, password })
       .pipe(map(user => {
         // store user details and jwt token in local storage to keep user logged in between page refreshes
         localStorage.setItem('currentUser', JSON.stringify(user));

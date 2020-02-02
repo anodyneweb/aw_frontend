@@ -2,7 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
-import { AlertService, IndustriesService } from '../_services';
+import { User } from '../_models';
+import { AlertService, IndustriesService, AuthenticationService, UserService } from '../_services';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 
@@ -64,7 +65,7 @@ const industries: IndustryElement[] = [
 
 export class HomeComponent implements OnInit {
   
-  
+  currentUser:User;
   returnUrl = '/'
   displayedColumns: string[] = ['name', 'dir', 'industry_code', 'status', 'type', 'industry_id', 'address', 'zipcode', 'state', 'city', 'country', 'created'];
   dataSource = new MatTableDataSource<IndustryElement>(industries);
@@ -76,16 +77,26 @@ export class HomeComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private IndustriesService: IndustriesService,
-    private alertService: AlertService
-  ) { }
+    private alertService: AlertService,
+    private authenticationService: AuthenticationService,
+    private userService: UserService
+  ) {
+    this.currentUser = this.authenticationService.currentUserValue;
+   }
 
   ngOnInit() {
-    this.loadIndustriesInfo()
+    console.log(this.currentUser)
+    if (this.currentUser){
+      this.loadIndustriesInfo()
+    }
+    else{
+      this.alertService.error("Unauthorized");
+      this.router.navigate([this.returnUrl]);
+    }
   }
 
 
   loadIndustriesInfo() {
-    
     this.alertService.clear();
     this.IndustriesService.getAll()
       .pipe(first())

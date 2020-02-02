@@ -942,3 +942,775 @@
  DEBUG [fc4dd637] Command: ng build --prod
  DEBUG [fc4dd637] 	The build command requires to be run in an Angular project, but a project definition could not be found.
  DEBUG [fc4dd637] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-01-21 05:42:34 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [d10a0952] Running /usr/bin/env mkdir -p /tmp as ubuntu@35.154.240.85
+ DEBUG [d10a0952] Command: /usr/bin/env mkdir -p /tmp
+  INFO [d10a0952] Finished in 1.730 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-anodyne-frontend-production-m.sh 0.0%
+  INFO Uploading /tmp/git-ssh-anodyne-frontend-production-m.sh 100.0%
+  INFO [50c1c995] Running /usr/bin/env chmod 700 /tmp/git-ssh-anodyne-frontend-production-m.sh as ubuntu@35.154.240.85
+ DEBUG [50c1c995] Command: /usr/bin/env chmod 700 /tmp/git-ssh-anodyne-frontend-production-m.sh
+  INFO [50c1c995] Finished in 0.116 seconds with exit status 0 (successful).
+  INFO [1b26e2de] Running /usr/bin/env git ls-remote git@github.com:anodyneweb/aw_frontend.git HEAD as ubuntu@35.154.240.85
+ DEBUG [1b26e2de] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-anodyne-frontend-production-m.sh" ; /usr/bin/env git ls-remote git@github.com:anodyneweb/aw_frontend.git HEAD )
+ DEBUG [1b26e2de] 	7bd61783f960705a4e3d7b02bb3fdb3557c77fe6	HEAD
+  INFO [1b26e2de] Finished in 2.248 seconds with exit status 0 (successful).
+  INFO [f90454a9] Running /usr/bin/env mkdir -p /home/ubuntu/apps/anodyne-frontend/shared /home/ubuntu/apps/anodyne-frontend/releases as ubuntu@35.154.240.85
+ DEBUG [f90454a9] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/anodyne-frontend/shared /home/ubuntu/apps/anodyne-frontend/releases
+  INFO [f90454a9] Finished in 0.060 seconds with exit status 0 (successful).
+  INFO [84d459b7] Running /usr/bin/env mkdir -p /home/ubuntu/apps/anodyne-frontend/shared/node_modules as ubuntu@35.154.240.85
+ DEBUG [84d459b7] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/anodyne-frontend/shared/node_modules
+  INFO [84d459b7] Finished in 0.068 seconds with exit status 0 (successful).
+ DEBUG [682090a0] Running [ -f /home/ubuntu/apps/anodyne-frontend/current/REVISION ] as ubuntu@35.154.240.85
+ DEBUG [682090a0] Command: [ -f /home/ubuntu/apps/anodyne-frontend/current/REVISION ]
+ DEBUG [682090a0] Finished in 0.109 seconds with exit status 0 (successful).
+ DEBUG [c6fb6d02] Running /usr/bin/env cat /home/ubuntu/apps/anodyne-frontend/current/REVISION 2>/dev/null as ubuntu@35.154.240.85
+ DEBUG [c6fb6d02] Command: /usr/bin/env cat /home/ubuntu/apps/anodyne-frontend/current/REVISION 2>/dev/null
+ DEBUG [c6fb6d02] 	7bd61783f960705a4e3d7b02bb3fdb3557c77fe6
+ DEBUG [c6fb6d02] Finished in 0.113 seconds with exit status 0 (successful).
+ DEBUG [e1ff30b9] Running [ -f /home/ubuntu/apps/anodyne-frontend/repo/HEAD ] as ubuntu@35.154.240.85
+ DEBUG [e1ff30b9] Command: [ -f /home/ubuntu/apps/anodyne-frontend/repo/HEAD ]
+ DEBUG [e1ff30b9] Finished in 0.110 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/ubuntu/apps/anodyne-frontend/repo
+ DEBUG [bc6f7d50] Running if test ! -d /home/ubuntu/apps/anodyne-frontend/repo; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/repo'" 1>&2; false; fi as ubuntu@35.154.240.85
+ DEBUG [bc6f7d50] Command: if test ! -d /home/ubuntu/apps/anodyne-frontend/repo; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/repo'" 1>&2; false; fi
+ DEBUG [bc6f7d50] Finished in 0.115 seconds with exit status 0 (successful).
+  INFO [9d14ee77] Running /usr/bin/env git remote set-url origin git@github.com:anodyneweb/aw_frontend.git as ubuntu@35.154.240.85
+ DEBUG [9d14ee77] Command: cd /home/ubuntu/apps/anodyne-frontend/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-anodyne-frontend-production-m.sh" ; /usr/bin/env git remote set-url origin git@github.com:anodyneweb/aw_frontend.git )
+  INFO [9d14ee77] Finished in 0.124 seconds with exit status 0 (successful).
+  INFO [722e309a] Running /usr/bin/env git remote update --prune as ubuntu@35.154.240.85
+ DEBUG [722e309a] Command: cd /home/ubuntu/apps/anodyne-frontend/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-anodyne-frontend-production-m.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [722e309a] 	Fetching origin
+  INFO [722e309a] Finished in 2.459 seconds with exit status 0 (successful).
+ DEBUG [f9a900ad] Running if test ! -d /home/ubuntu/apps/anodyne-frontend/repo; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/repo'" 1>&2; false; fi as ubuntu@35.154.240.85
+ DEBUG [f9a900ad] Command: if test ! -d /home/ubuntu/apps/anodyne-frontend/repo; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/repo'" 1>&2; false; fi
+ DEBUG [f9a900ad] Finished in 0.072 seconds with exit status 0 (successful).
+  INFO [ca64b445] Running /usr/bin/env mkdir -p /home/ubuntu/apps/anodyne-frontend/releases/20200121001239 as ubuntu@35.154.240.85
+ DEBUG [ca64b445] Command: cd /home/ubuntu/apps/anodyne-frontend/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-anodyne-frontend-production-m.sh" ; /usr/bin/env mkdir -p /home/ubuntu/apps/anodyne-frontend/releases/20200121001239 )
+  INFO [ca64b445] Finished in 0.115 seconds with exit status 0 (successful).
+  INFO [08fbbd3e] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/ubuntu/apps/anodyne-frontend/releases/20200121001239 as ubuntu@35.154.240.85
+ DEBUG [08fbbd3e] Command: cd /home/ubuntu/apps/anodyne-frontend/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-anodyne-frontend-production-m.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/ubuntu/apps/anodyne-frontend/releases/20200121001239 )
+  INFO [08fbbd3e] Finished in 0.154 seconds with exit status 0 (successful).
+ DEBUG [09e5d0e7] Running if test ! -d /home/ubuntu/apps/anodyne-frontend/repo; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/repo'" 1>&2; false; fi as ubuntu@35.154.240.85
+ DEBUG [09e5d0e7] Command: if test ! -d /home/ubuntu/apps/anodyne-frontend/repo; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/repo'" 1>&2; false; fi
+ DEBUG [09e5d0e7] Finished in 0.115 seconds with exit status 0 (successful).
+ DEBUG [68bbf839] Running /usr/bin/env git rev-list --max-count=1 master as ubuntu@35.154.240.85
+ DEBUG [68bbf839] Command: cd /home/ubuntu/apps/anodyne-frontend/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-anodyne-frontend-production-m.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [68bbf839] 	7bd61783f960705a4e3d7b02bb3fdb3557c77fe6
+ DEBUG [68bbf839] Finished in 0.116 seconds with exit status 0 (successful).
+ DEBUG [a44b56b3] Running if test ! -d /home/ubuntu/apps/anodyne-frontend/releases/20200121001239; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/releases/20200121001239'" 1>&2; false; fi as ubuntu@35.154.240.85
+ DEBUG [a44b56b3] Command: if test ! -d /home/ubuntu/apps/anodyne-frontend/releases/20200121001239; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/releases/20200121001239'" 1>&2; false; fi
+ DEBUG [a44b56b3] Finished in 0.113 seconds with exit status 0 (successful).
+  INFO [8573df86] Running /usr/bin/env echo "7bd61783f960705a4e3d7b02bb3fdb3557c77fe6" > REVISION as ubuntu@35.154.240.85
+ DEBUG [8573df86] Command: cd /home/ubuntu/apps/anodyne-frontend/releases/20200121001239 && /usr/bin/env echo "7bd61783f960705a4e3d7b02bb3fdb3557c77fe6" > REVISION
+  INFO [8573df86] Finished in 0.113 seconds with exit status 0 (successful).
+  INFO [12f78cf9] Running /usr/bin/env mkdir -p /home/ubuntu/apps/anodyne-frontend/releases/20200121001239 as ubuntu@35.154.240.85
+ DEBUG [12f78cf9] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/anodyne-frontend/releases/20200121001239
+  INFO [12f78cf9] Finished in 0.114 seconds with exit status 0 (successful).
+ DEBUG [e6895603] Running [ -L /home/ubuntu/apps/anodyne-frontend/releases/20200121001239/node_modules ] as ubuntu@35.154.240.85
+ DEBUG [e6895603] Command: [ -L /home/ubuntu/apps/anodyne-frontend/releases/20200121001239/node_modules ]
+ DEBUG [e6895603] Finished in 0.112 seconds with exit status 1 (failed).
+ DEBUG [75077a6b] Running [ -d /home/ubuntu/apps/anodyne-frontend/releases/20200121001239/node_modules ] as ubuntu@35.154.240.85
+ DEBUG [75077a6b] Command: [ -d /home/ubuntu/apps/anodyne-frontend/releases/20200121001239/node_modules ]
+ DEBUG [75077a6b] Finished in 0.113 seconds with exit status 1 (failed).
+  INFO [e5cf3573] Running /usr/bin/env ln -s /home/ubuntu/apps/anodyne-frontend/shared/node_modules /home/ubuntu/apps/anodyne-frontend/releases/20200121001239/node_modules as ubuntu@35.154.240.85
+ DEBUG [e5cf3573] Command: /usr/bin/env ln -s /home/ubuntu/apps/anodyne-frontend/shared/node_modules /home/ubuntu/apps/anodyne-frontend/releases/20200121001239/node_modules
+  INFO [e5cf3573] Finished in 0.116 seconds with exit status 0 (successful).
+  INFO [885366d3] Running /usr/bin/env ln -s /home/ubuntu/apps/anodyne-frontend/releases/20200121001239 /home/ubuntu/apps/anodyne-frontend/releases/current as ubuntu@35.154.240.85
+ DEBUG [885366d3] Command: /usr/bin/env ln -s /home/ubuntu/apps/anodyne-frontend/releases/20200121001239 /home/ubuntu/apps/anodyne-frontend/releases/current
+  INFO [885366d3] Finished in 0.112 seconds with exit status 0 (successful).
+  INFO [8309c0ff] Running /usr/bin/env mv /home/ubuntu/apps/anodyne-frontend/releases/current /home/ubuntu/apps/anodyne-frontend as ubuntu@35.154.240.85
+ DEBUG [8309c0ff] Command: /usr/bin/env mv /home/ubuntu/apps/anodyne-frontend/releases/current /home/ubuntu/apps/anodyne-frontend
+  INFO [8309c0ff] Finished in 0.117 seconds with exit status 0 (successful).
+ DEBUG [0e210700] Running if test ! -d /home/ubuntu/apps/anodyne-frontend/releases/20200121001239; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/releases/20200121001239'" 1>&2; false; fi as ubuntu@35.154.240.85
+ DEBUG [0e210700] Command: if test ! -d /home/ubuntu/apps/anodyne-frontend/releases/20200121001239; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/releases/20200121001239'" 1>&2; false; fi
+ DEBUG [0e210700] Finished in 0.111 seconds with exit status 0 (successful).
+ DEBUG [fa9a22f2] Running [ -d /home/ubuntu/apps/anodyne-frontend/current/node_modules ] as ubuntu@35.154.240.85
+ DEBUG [fa9a22f2] Command: [ -d /home/ubuntu/apps/anodyne-frontend/current/node_modules ]
+ DEBUG [fa9a22f2] Finished in 0.110 seconds with exit status 0 (successful).
+  INFO [0d999f5f] Running /usr/bin/env npm install as ubuntu@35.154.240.85
+ DEBUG [0d999f5f] Command: cd /home/ubuntu/apps/anodyne-frontend/releases/20200121001239 && /usr/bin/env npm install
+ DEBUG [0d999f5f] 	npm
+ DEBUG [0d999f5f] 	 
+ DEBUG [0d999f5f] 	WARN
+ DEBUG [0d999f5f] 	 
+ DEBUG [0d999f5f] 	deprecated
+ DEBUG [0d999f5f] 	 core-js@2.6.11: core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.
+ DEBUG [0d999f5f] 	npm
+ DEBUG [0d999f5f] 	 
+ DEBUG [0d999f5f] 	WARN
+ DEBUG [0d999f5f] 	 @ngtools/webpack@8.3.21 requires a peer of @angular/compiler-cli@^8.0.0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [0d999f5f] 	npm
+ DEBUG [0d999f5f] 	 
+ DEBUG [0d999f5f] 	WARN
+ DEBUG [0d999f5f] 	 tsutils@2.29.0 requires a peer of typescript@>=2.1.0 || >=2.1.0-dev || >=2.2.0-dev || >=2.3.0-dev || >=2.4.0-dev || >=2.5.0-dev || >=2.6.0-dev || >=2.7.0-dev || >=2.8.0-dev || >=2.9.0-dev || >= 3.0.0-dev || >= 3.1.0-dev but none is installed. You must install peer dependencies yourself.
+ DEBUG [0d999f5f] 	npm
+ DEBUG [0d999f5f] 	 
+ DEBUG [0d999f5f] 	WARN
+ DEBUG [0d999f5f] 	 
+ DEBUG [0d999f5f] 	optional
+ DEBUG [0d999f5f] 	 SKIPPING OPTIONAL DEPENDENCY: fsevents@2.1.2 (node_modules/@angular-devkit/build-angular/node_modules/fsevents):
+ DEBUG [0d999f5f] 	npm
+ DEBUG [0d999f5f] 	 
+ DEBUG [0d999f5f] 	WARN
+ DEBUG [0d999f5f] 	 
+ DEBUG [0d999f5f] 	notsup
+ DEBUG [0d999f5f] 	 SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.1.2: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+ DEBUG [0d999f5f] 	npm
+ DEBUG [0d999f5f] 	 
+ DEBUG [0d999f5f] 	WARN
+ DEBUG [0d999f5f] 	 
+ DEBUG [0d999f5f] 	optional
+ DEBUG [0d999f5f] 	 SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.11 (node_modules/karma/node_modules/fsevents):
+ DEBUG [0d999f5f] 	npm
+ DEBUG [0d999f5f] 	 
+ DEBUG [0d999f5f] 	WARN
+ DEBUG [0d999f5f] 	 
+ DEBUG [0d999f5f] 	notsup
+ DEBUG [0d999f5f] 	 SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.11: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+ DEBUG [0d999f5f] 	npm
+ DEBUG [0d999f5f] 	 
+ DEBUG [0d999f5f] 	WARN
+ DEBUG [0d999f5f] 	 
+ DEBUG [0d999f5f] 	optional
+ DEBUG [0d999f5f] 	 SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.11 (node_modules/@angular/compiler-cli/node_modules/fsevents):
+ DEBUG [0d999f5f] 	npm
+ DEBUG [0d999f5f] 	 
+ DEBUG [0d999f5f] 	WARN
+ DEBUG [0d999f5f] 	 
+ DEBUG [0d999f5f] 	notsup
+ DEBUG [0d999f5f] 	 SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.11: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+ DEBUG [0d999f5f] 	npm
+ DEBUG [0d999f5f] 	 
+ DEBUG [0d999f5f] 	WARN
+ DEBUG [0d999f5f] 	 
+ DEBUG [0d999f5f] 	optional
+ DEBUG [0d999f5f] 	 SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.11 (node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents):
+ DEBUG [0d999f5f] 	npm
+ DEBUG [0d999f5f] 	 
+ DEBUG [0d999f5f] 	WARN
+ DEBUG [0d999f5f] 	 
+ DEBUG [0d999f5f] 	notsup
+ DEBUG [0d999f5f] 	 SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.11: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+ DEBUG [0d999f5f] 	npm
+ DEBUG [0d999f5f] 	 
+ DEBUG [0d999f5f] 	WARN
+ DEBUG [0d999f5f] 	 
+ DEBUG [0d999f5f] 	optional
+ DEBUG [0d999f5f] 	 SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.11 (node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents):
+ DEBUG [0d999f5f] 	npm
+ DEBUG [0d999f5f] 	 
+ DEBUG [0d999f5f] 	WARN
+ DEBUG [0d999f5f] 	 
+ DEBUG [0d999f5f] 	notsup
+ DEBUG [0d999f5f] 	 SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.11: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+ DEBUG [0d999f5f] 	
+ DEBUG [0d999f5f] 	audited 18888 packages in 66.184s
+ DEBUG [0d999f5f] 	found 2 high severity vulnerabilities
+  run `npm audit fix` to fix them, or `npm audit` for details
+  INFO [0d999f5f] Finished in 68.427 seconds with exit status 0 (successful).
+ DEBUG [20dbbeef] Running if test ! -d /home/ubuntu/apps/anodyne-frontend/releases/20200121001239; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/releases/20200121001239'" 1>&2; false; fi as ubuntu@35.154.240.85
+ DEBUG [20dbbeef] Command: if test ! -d /home/ubuntu/apps/anodyne-frontend/releases/20200121001239; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/releases/20200121001239'" 1>&2; false; fi
+ DEBUG [20dbbeef] Finished in 0.117 seconds with exit status 0 (successful).
+ DEBUG [db516ad2] Running /usr/bin/env ls -x /home/ubuntu/apps/anodyne-frontend/releases as ubuntu@35.154.240.85
+ DEBUG [db516ad2] Command: /usr/bin/env ls -x /home/ubuntu/apps/anodyne-frontend/releases
+ DEBUG [db516ad2] 	20200115071143	20200115071422	20200115072819	20200120233734	20200120234010
+20200121001239
+ DEBUG [db516ad2] Finished in 0.116 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on 35.154.240.85
+ DEBUG [fb54dadd] Running [ -d /home/ubuntu/apps/anodyne-frontend/current ] as ubuntu@35.154.240.85
+ DEBUG [fb54dadd] Command: [ -d /home/ubuntu/apps/anodyne-frontend/current ]
+ DEBUG [fb54dadd] Finished in 0.110 seconds with exit status 0 (successful).
+ DEBUG [3cfd6062] Running /usr/bin/env readlink /home/ubuntu/apps/anodyne-frontend/current as ubuntu@35.154.240.85
+ DEBUG [3cfd6062] Command: /usr/bin/env readlink /home/ubuntu/apps/anodyne-frontend/current
+ DEBUG [3cfd6062] 	/home/ubuntu/apps/anodyne-frontend/releases/20200121001239
+ DEBUG [3cfd6062] Finished in 0.116 seconds with exit status 0 (successful).
+  INFO [44da1c5e] Running /usr/bin/env rm -rf /home/ubuntu/apps/anodyne-frontend/releases/20200115071143 as ubuntu@35.154.240.85
+ DEBUG [44da1c5e] Command: /usr/bin/env rm -rf /home/ubuntu/apps/anodyne-frontend/releases/20200115071143
+  INFO [44da1c5e] Finished in 0.120 seconds with exit status 0 (successful).
+ DEBUG [ff9e60ce] Running if test ! -d /home/ubuntu/apps/anodyne-frontend/releases; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/releases'" 1>&2; false; fi as ubuntu@35.154.240.85
+ DEBUG [ff9e60ce] Command: if test ! -d /home/ubuntu/apps/anodyne-frontend/releases; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/releases'" 1>&2; false; fi
+ DEBUG [ff9e60ce] Finished in 0.111 seconds with exit status 0 (successful).
+  INFO [88f8cc89] Running /usr/bin/env echo "Branch master (at 7bd61783f960705a4e3d7b02bb3fdb3557c77fe6) deployed as release 20200121001239 by m" >> /home/ubuntu/apps/anodyne-frontend/revisions.log as ubuntu@35.154.240.85
+ DEBUG [88f8cc89] Command: cd /home/ubuntu/apps/anodyne-frontend/releases && /usr/bin/env echo "Branch master (at 7bd61783f960705a4e3d7b02bb3fdb3557c77fe6) deployed as release 20200121001239 by m" >> /home/ubuntu/apps/anodyne-frontend/revisions.log
+  INFO [88f8cc89] Finished in 0.113 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-01-21 05:50:59 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [e3f1060c] Running /usr/bin/env mkdir -p /tmp as ubuntu@35.154.240.85
+ DEBUG [e3f1060c] Command: /usr/bin/env mkdir -p /tmp
+  INFO [e3f1060c] Finished in 1.848 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-anodyne-frontend-production-m.sh 0.0%
+  INFO Uploading /tmp/git-ssh-anodyne-frontend-production-m.sh 100.0%
+  INFO [d0645b17] Running /usr/bin/env chmod 700 /tmp/git-ssh-anodyne-frontend-production-m.sh as ubuntu@35.154.240.85
+ DEBUG [d0645b17] Command: /usr/bin/env chmod 700 /tmp/git-ssh-anodyne-frontend-production-m.sh
+  INFO [d0645b17] Finished in 0.127 seconds with exit status 0 (successful).
+  INFO [53c8b2ff] Running /usr/bin/env git ls-remote git@github.com:anodyneweb/aw_frontend.git HEAD as ubuntu@35.154.240.85
+ DEBUG [53c8b2ff] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-anodyne-frontend-production-m.sh" ; /usr/bin/env git ls-remote git@github.com:anodyneweb/aw_frontend.git HEAD )
+ DEBUG [53c8b2ff] 	27b00a464fdbaf46043867150614018d51aa73d2	HEAD
+  INFO [53c8b2ff] Finished in 2.423 seconds with exit status 0 (successful).
+  INFO [301dc25d] Running /usr/bin/env mkdir -p /home/ubuntu/apps/anodyne-frontend/shared /home/ubuntu/apps/anodyne-frontend/releases as ubuntu@35.154.240.85
+ DEBUG [301dc25d] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/anodyne-frontend/shared /home/ubuntu/apps/anodyne-frontend/releases
+  INFO [301dc25d] Finished in 0.072 seconds with exit status 0 (successful).
+  INFO [092be2dc] Running /usr/bin/env mkdir -p /home/ubuntu/apps/anodyne-frontend/shared/node_modules as ubuntu@35.154.240.85
+ DEBUG [092be2dc] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/anodyne-frontend/shared/node_modules
+  INFO [092be2dc] Finished in 0.109 seconds with exit status 0 (successful).
+ DEBUG [0b66bfbc] Running [ -f /home/ubuntu/apps/anodyne-frontend/current/REVISION ] as ubuntu@35.154.240.85
+ DEBUG [0b66bfbc] Command: [ -f /home/ubuntu/apps/anodyne-frontend/current/REVISION ]
+ DEBUG [0b66bfbc] Finished in 0.113 seconds with exit status 0 (successful).
+ DEBUG [743d121a] Running /usr/bin/env cat /home/ubuntu/apps/anodyne-frontend/current/REVISION 2>/dev/null as ubuntu@35.154.240.85
+ DEBUG [743d121a] Command: /usr/bin/env cat /home/ubuntu/apps/anodyne-frontend/current/REVISION 2>/dev/null
+ DEBUG [743d121a] 	7bd61783f960705a4e3d7b02bb3fdb3557c77fe6
+ DEBUG [743d121a] Finished in 0.118 seconds with exit status 0 (successful).
+ DEBUG [4432eb59] Running [ -f /home/ubuntu/apps/anodyne-frontend/repo/HEAD ] as ubuntu@35.154.240.85
+ DEBUG [4432eb59] Command: [ -f /home/ubuntu/apps/anodyne-frontend/repo/HEAD ]
+ DEBUG [4432eb59] Finished in 0.112 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/ubuntu/apps/anodyne-frontend/repo
+ DEBUG [1ad4dfae] Running if test ! -d /home/ubuntu/apps/anodyne-frontend/repo; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/repo'" 1>&2; false; fi as ubuntu@35.154.240.85
+ DEBUG [1ad4dfae] Command: if test ! -d /home/ubuntu/apps/anodyne-frontend/repo; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/repo'" 1>&2; false; fi
+ DEBUG [1ad4dfae] Finished in 0.119 seconds with exit status 0 (successful).
+  INFO [3837f972] Running /usr/bin/env git remote set-url origin git@github.com:anodyneweb/aw_frontend.git as ubuntu@35.154.240.85
+ DEBUG [3837f972] Command: cd /home/ubuntu/apps/anodyne-frontend/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-anodyne-frontend-production-m.sh" ; /usr/bin/env git remote set-url origin git@github.com:anodyneweb/aw_frontend.git )
+  INFO [3837f972] Finished in 0.124 seconds with exit status 0 (successful).
+  INFO [4f45f87b] Running /usr/bin/env git remote update --prune as ubuntu@35.154.240.85
+ DEBUG [4f45f87b] Command: cd /home/ubuntu/apps/anodyne-frontend/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-anodyne-frontend-production-m.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [4f45f87b] 	Fetching origin
+ DEBUG [4f45f87b] 	From github.com:anodyneweb/aw_frontend
+   7bd6178..27b00a4  master     -> master
+  INFO [4f45f87b] Finished in 3.011 seconds with exit status 0 (successful).
+ DEBUG [f40408c5] Running if test ! -d /home/ubuntu/apps/anodyne-frontend/repo; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/repo'" 1>&2; false; fi as ubuntu@35.154.240.85
+ DEBUG [f40408c5] Command: if test ! -d /home/ubuntu/apps/anodyne-frontend/repo; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/repo'" 1>&2; false; fi
+ DEBUG [f40408c5] Finished in 0.067 seconds with exit status 0 (successful).
+  INFO [7f74a13e] Running /usr/bin/env mkdir -p /home/ubuntu/apps/anodyne-frontend/releases/20200121002104 as ubuntu@35.154.240.85
+ DEBUG [7f74a13e] Command: cd /home/ubuntu/apps/anodyne-frontend/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-anodyne-frontend-production-m.sh" ; /usr/bin/env mkdir -p /home/ubuntu/apps/anodyne-frontend/releases/20200121002104 )
+  INFO [7f74a13e] Finished in 0.116 seconds with exit status 0 (successful).
+  INFO [ea6c2a34] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/ubuntu/apps/anodyne-frontend/releases/20200121002104 as ubuntu@35.154.240.85
+ DEBUG [ea6c2a34] Command: cd /home/ubuntu/apps/anodyne-frontend/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-anodyne-frontend-production-m.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/ubuntu/apps/anodyne-frontend/releases/20200121002104 )
+  INFO [ea6c2a34] Finished in 0.158 seconds with exit status 0 (successful).
+ DEBUG [4f9856ce] Running if test ! -d /home/ubuntu/apps/anodyne-frontend/repo; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/repo'" 1>&2; false; fi as ubuntu@35.154.240.85
+ DEBUG [4f9856ce] Command: if test ! -d /home/ubuntu/apps/anodyne-frontend/repo; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/repo'" 1>&2; false; fi
+ DEBUG [4f9856ce] Finished in 0.115 seconds with exit status 0 (successful).
+ DEBUG [9de33325] Running /usr/bin/env git rev-list --max-count=1 master as ubuntu@35.154.240.85
+ DEBUG [9de33325] Command: cd /home/ubuntu/apps/anodyne-frontend/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-anodyne-frontend-production-m.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [9de33325] 	27b00a464fdbaf46043867150614018d51aa73d2
+ DEBUG [9de33325] Finished in 0.115 seconds with exit status 0 (successful).
+ DEBUG [d724aa1a] Running if test ! -d /home/ubuntu/apps/anodyne-frontend/releases/20200121002104; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/releases/20200121002104'" 1>&2; false; fi as ubuntu@35.154.240.85
+ DEBUG [d724aa1a] Command: if test ! -d /home/ubuntu/apps/anodyne-frontend/releases/20200121002104; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/releases/20200121002104'" 1>&2; false; fi
+ DEBUG [d724aa1a] Finished in 0.114 seconds with exit status 0 (successful).
+  INFO [a42ab9d5] Running /usr/bin/env echo "27b00a464fdbaf46043867150614018d51aa73d2" > REVISION as ubuntu@35.154.240.85
+ DEBUG [a42ab9d5] Command: cd /home/ubuntu/apps/anodyne-frontend/releases/20200121002104 && /usr/bin/env echo "27b00a464fdbaf46043867150614018d51aa73d2" > REVISION
+  INFO [a42ab9d5] Finished in 0.114 seconds with exit status 0 (successful).
+  INFO [03c399c8] Running /usr/bin/env mkdir -p /home/ubuntu/apps/anodyne-frontend/releases/20200121002104 as ubuntu@35.154.240.85
+ DEBUG [03c399c8] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/anodyne-frontend/releases/20200121002104
+  INFO [03c399c8] Finished in 0.113 seconds with exit status 0 (successful).
+ DEBUG [7b8d831a] Running [ -L /home/ubuntu/apps/anodyne-frontend/releases/20200121002104/node_modules ] as ubuntu@35.154.240.85
+ DEBUG [7b8d831a] Command: [ -L /home/ubuntu/apps/anodyne-frontend/releases/20200121002104/node_modules ]
+ DEBUG [7b8d831a] Finished in 0.117 seconds with exit status 1 (failed).
+ DEBUG [0dcf34b3] Running [ -d /home/ubuntu/apps/anodyne-frontend/releases/20200121002104/node_modules ] as ubuntu@35.154.240.85
+ DEBUG [0dcf34b3] Command: [ -d /home/ubuntu/apps/anodyne-frontend/releases/20200121002104/node_modules ]
+ DEBUG [0dcf34b3] Finished in 0.115 seconds with exit status 1 (failed).
+  INFO [f099c883] Running /usr/bin/env ln -s /home/ubuntu/apps/anodyne-frontend/shared/node_modules /home/ubuntu/apps/anodyne-frontend/releases/20200121002104/node_modules as ubuntu@35.154.240.85
+ DEBUG [f099c883] Command: /usr/bin/env ln -s /home/ubuntu/apps/anodyne-frontend/shared/node_modules /home/ubuntu/apps/anodyne-frontend/releases/20200121002104/node_modules
+  INFO [f099c883] Finished in 0.115 seconds with exit status 0 (successful).
+  INFO [061c7079] Running /usr/bin/env ln -s /home/ubuntu/apps/anodyne-frontend/releases/20200121002104 /home/ubuntu/apps/anodyne-frontend/releases/current as ubuntu@35.154.240.85
+ DEBUG [061c7079] Command: /usr/bin/env ln -s /home/ubuntu/apps/anodyne-frontend/releases/20200121002104 /home/ubuntu/apps/anodyne-frontend/releases/current
+  INFO [061c7079] Finished in 0.112 seconds with exit status 0 (successful).
+  INFO [e5f2fe85] Running /usr/bin/env mv /home/ubuntu/apps/anodyne-frontend/releases/current /home/ubuntu/apps/anodyne-frontend as ubuntu@35.154.240.85
+ DEBUG [e5f2fe85] Command: /usr/bin/env mv /home/ubuntu/apps/anodyne-frontend/releases/current /home/ubuntu/apps/anodyne-frontend
+  INFO [e5f2fe85] Finished in 0.118 seconds with exit status 0 (successful).
+ DEBUG [28591312] Running if test ! -d /home/ubuntu/apps/anodyne-frontend/releases/20200121002104; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/releases/20200121002104'" 1>&2; false; fi as ubuntu@35.154.240.85
+ DEBUG [28591312] Command: if test ! -d /home/ubuntu/apps/anodyne-frontend/releases/20200121002104; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/releases/20200121002104'" 1>&2; false; fi
+ DEBUG [28591312] Finished in 0.108 seconds with exit status 0 (successful).
+ DEBUG [26c7d82c] Running [ -d /home/ubuntu/apps/anodyne-frontend/current/node_modules ] as ubuntu@35.154.240.85
+ DEBUG [26c7d82c] Command: [ -d /home/ubuntu/apps/anodyne-frontend/current/node_modules ]
+ DEBUG [26c7d82c] Finished in 0.113 seconds with exit status 0 (successful).
+  INFO [8ecf4221] Running /usr/bin/env npm install as ubuntu@35.154.240.85
+ DEBUG [8ecf4221] Command: cd /home/ubuntu/apps/anodyne-frontend/releases/20200121002104 && /usr/bin/env npm install
+ DEBUG [8ecf4221] 	
+> core-js@2.6.11 postinstall /home/ubuntu/apps/anodyne-frontend/releases/20200121002104/node_modules/babel-runtime/node_modules/core-js
+> node -e "try{require('./postinstall')}catch(e){}"
+
+ DEBUG [8ecf4221] 	[96mThank you for using core-js ([94m https://github.com/zloirock/core-js [96m) for polyfilling JavaScript standard library![0m
+
+[96mThe project needs your help! Please consider supporting of core-js on Open Collective or Patreon: [0m
+[96m>[94m https://opencollective.com/core-js [0m
+[96m>[94m https://www.patreon.com/zloirock [0m
+
+[96mAlso, the author of core-js ([94m https://github.com/zloirock [96m) is looking for a good job -)[0m
+
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 @babel/plugin-proposal-dynamic-import@7.8.3 requires a peer of @babel/core@^7.0.0-0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 @babel/plugin-proposal-async-generator-functions@7.8.3 requires a peer of @babel/core@^7.0.0-0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 @babel/plugin-proposal-json-strings@7.8.3 requires a peer of @babel/core@^7.0.0-0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 @babel/plugin-syntax-dynamic-import@7.8.3 requires a peer of @babel/core@^7.0.0-0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 @babel/plugin-proposal-optional-catch-binding@7.8.3 requires a peer of @babel/core@^7.0.0-0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 @babel/plugin-proposal-unicode-property-regex@7.8.3 requires a peer of @babel/core@^7.0.0-0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 @babel/plugin-syntax-async-generators@7.8.4 requires a peer of @babel/core@^7.0.0-0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 @babel/plugin-proposal-object-rest-spread@7.8.3 requires a peer of @babel/core@^7.0.0-0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 @babel/plugin-syntax-json-strings@7.8.3 requires a peer of @babel/core@^7.0.0-0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 @babel/plugin-syntax-object-rest-spread@7.8.3 requires a peer of @babel/core@^7.0.0-0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 @babel/plugin-syntax-top-level-await@7.8.3 requires a peer of @babel/core@^7.0.0-0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 @babel/plugin-syntax-optional-catch-binding@7.8.3 requires a peer of @babel/core@^7.0.0-0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 @babel/plugin-transform-arrow-functions@7.8.3 requires a peer of @babel/core@^7.0.0-0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 @babel/plugin-transform-block-scoped-functions@7.8.3 requires a peer of @babel/core@^7.0.0-0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 @babel/plugin-transform-computed-properties@7.8.3 requires a peer of @babel/core@^7.0.0-0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 @babel/plugin-transform-block-scoping@7.8.3 requires a peer of @babel/core@^7.0.0-0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 @babel/plugin-transform-async-to-generator@7.8.3 requires a peer of @babel/core@^7.0.0-0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 @babel/plugin-transform-classes@7.8.3 requires a peer of @babel/core@^7.0.0-0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 @babel/plugin-transform-destructuring@7.8.3 requires a peer of @babel/core@^7.0.0-0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 @babel/plugin-transform-duplicate-keys@7.8.3 requires a peer of @babel/core@^7.0.0-0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 @babel/plugin-transform-exponentiation-operator@7.8.3 requires a peer of @babel/core@^7.0.0-0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 @babel/plugin-transform-dotall-regex@7.8.3 requires a peer of @babel/core@^7.0.0-0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 @babel/plugin-transform-for-of@7.8.3 requires a peer of @babel/core@^7.0.0-0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 @babel/plugin-transform-function-name@7.8.3 requires a peer of @babel/core@^7.0.0-0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 @babel/plugin-transform-literals@7.8.3 requires a peer of @babel/core@^7.0.0-0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 @babel/plugin-transform-member-expression-literals@7.8.3 requires a peer of @babel/core@^7.0.0-0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 @babel/plugin-transform-modules-amd@7.8.3 requires a peer of @babel/core@^7.0.0-0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 @babel/plugin-transform-modules-commonjs@7.8.3 requires a peer of @babel/core@^7.0.0-0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 @babel/plugin-transform-modules-systemjs@7.8.3 requires a peer of @babel/core@^7.0.0-0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 @babel/plugin-transform-modules-umd@7.8.3 requires a peer of @babel/core@^7.0.0-0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 @babel/plugin-transform-new-target@7.8.3 requires a peer of @babel/core@^7.0.0-0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 @babel/plugin-transform-named-capturing-groups-regex@7.8.3 requires a peer of @babel/core@^7.0.0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 @babel/plugin-transform-property-literals@7.8.3 requires a peer of @babel/core@^7.0.0-0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 @babel/plugin-transform-object-super@7.8.3 requires a peer of @babel/core@^7.0.0-0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 @babel/plugin-transform-parameters@7.8.3 requires a peer of @babel/core@^7.0.0-0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 @babel/plugin-transform-reserved-words@7.8.3 requires a peer of @babel/core@^7.0.0-0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 @babel/plugin-transform-regenerator@7.8.3 requires a peer of @babel/core@^7.0.0-0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 @babel/plugin-transform-shorthand-properties@7.8.3 requires a peer of @babel/core@^7.0.0-0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 @babel/plugin-transform-spread@7.8.3 requires a peer of @babel/core@^7.0.0-0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 @babel/plugin-transform-sticky-regex@7.8.3 requires a peer of @babel/core@^7.0.0-0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 @babel/plugin-transform-template-literals@7.8.3 requires a peer of @babel/core@^7.0.0-0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 @babel/plugin-transform-typeof-symbol@7.8.3 requires a peer of @babel/core@^7.0.0-0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 @babel/plugin-transform-unicode-regex@7.8.3 requires a peer of @babel/core@^7.0.0-0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 @babel/helper-create-regexp-features-plugin@7.8.3 requires a peer of @babel/core@^7.0.0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 tsutils@2.29.0 requires a peer of typescript@>=2.1.0 || >=2.1.0-dev || >=2.2.0-dev || >=2.3.0-dev || >=2.4.0-dev || >=2.5.0-dev || >=2.6.0-dev || >=2.7.0-dev || >=2.8.0-dev || >=2.9.0-dev || >= 3.0.0-dev || >= 3.1.0-dev but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 webpack-dev-middleware@3.7.2 requires a peer of webpack@^4.0.0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	optional
+ DEBUG [8ecf4221] 	 SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.11 (node_modules/webpack/node_modules/fsevents):
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	notsup
+ DEBUG [8ecf4221] 	 SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.11: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	optional
+ DEBUG [8ecf4221] 	 SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.11 (node_modules/webpack-dev-server/node_modules/fsevents):
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	notsup
+ DEBUG [8ecf4221] 	 SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.11: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	optional
+ DEBUG [8ecf4221] 	 SKIPPING OPTIONAL DEPENDENCY: fsevents@2.1.2 (node_modules/sass/node_modules/fsevents):
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	notsup
+ DEBUG [8ecf4221] 	 SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.1.2: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	optional
+ DEBUG [8ecf4221] 	 SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.11 (node_modules/karma/node_modules/fsevents):
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	notsup
+ DEBUG [8ecf4221] 	 SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.11: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	optional
+ DEBUG [8ecf4221] 	 SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.11 (node_modules/@angular/compiler-cli/node_modules/fsevents):
+ DEBUG [8ecf4221] 	npm
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	WARN
+ DEBUG [8ecf4221] 	 
+ DEBUG [8ecf4221] 	notsup
+ DEBUG [8ecf4221] 	 SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.11: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+ DEBUG [8ecf4221] 	
+ DEBUG [8ecf4221] 	added 777 packages from 244 contributors, removed 18 packages, updated 16 packages, moved 714 packages and audited 18888 packages in 56.395s
+ DEBUG [8ecf4221] 	
+24 packages are looking for funding
+  run `npm fund` for details
+
+ DEBUG [8ecf4221] 	found 2 high severity vulnerabilities
+  run `npm audit fix` to fix them, or `npm audit` for details
+  INFO [8ecf4221] Finished in 59.200 seconds with exit status 0 (successful).
+ DEBUG [32397a29] Running if test ! -d /home/ubuntu/apps/anodyne-frontend/releases/20200121002104; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/releases/20200121002104'" 1>&2; false; fi as ubuntu@35.154.240.85
+ DEBUG [32397a29] Command: if test ! -d /home/ubuntu/apps/anodyne-frontend/releases/20200121002104; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/releases/20200121002104'" 1>&2; false; fi
+ DEBUG [32397a29] Finished in 0.117 seconds with exit status 0 (successful).
+  INFO [1c172c5b] Running ng build --prod as ubuntu@35.154.240.85
+ DEBUG [1c172c5b] Command: ng build --prod
+ DEBUG [1c172c5b] 	The build command requires to be run in an Angular project, but a project definition could not be found.
+ DEBUG [1c172c5b] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-01-21 05:52:32 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [aaad7b2e] Running /usr/bin/env mkdir -p /tmp as ubuntu@35.154.240.85
+ DEBUG [aaad7b2e] Command: /usr/bin/env mkdir -p /tmp
+  INFO [aaad7b2e] Finished in 1.339 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-anodyne-frontend-production-m.sh 0.0%
+  INFO Uploading /tmp/git-ssh-anodyne-frontend-production-m.sh 100.0%
+  INFO [c6238c1b] Running /usr/bin/env chmod 700 /tmp/git-ssh-anodyne-frontend-production-m.sh as ubuntu@35.154.240.85
+ DEBUG [c6238c1b] Command: /usr/bin/env chmod 700 /tmp/git-ssh-anodyne-frontend-production-m.sh
+  INFO [c6238c1b] Finished in 0.117 seconds with exit status 0 (successful).
+  INFO [907c01c5] Running /usr/bin/env git ls-remote git@github.com:anodyneweb/aw_frontend.git HEAD as ubuntu@35.154.240.85
+ DEBUG [907c01c5] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-anodyne-frontend-production-m.sh" ; /usr/bin/env git ls-remote git@github.com:anodyneweb/aw_frontend.git HEAD )
+ DEBUG [907c01c5] 	27b00a464fdbaf46043867150614018d51aa73d2	HEAD
+  INFO [907c01c5] Finished in 2.273 seconds with exit status 0 (successful).
+  INFO [a5a71341] Running /usr/bin/env mkdir -p /home/ubuntu/apps/anodyne-frontend/shared /home/ubuntu/apps/anodyne-frontend/releases as ubuntu@35.154.240.85
+ DEBUG [a5a71341] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/anodyne-frontend/shared /home/ubuntu/apps/anodyne-frontend/releases
+  INFO [a5a71341] Finished in 0.060 seconds with exit status 0 (successful).
+  INFO [4a15b8e0] Running /usr/bin/env mkdir -p /home/ubuntu/apps/anodyne-frontend/shared/node_modules as ubuntu@35.154.240.85
+ DEBUG [4a15b8e0] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/anodyne-frontend/shared/node_modules
+  INFO [4a15b8e0] Finished in 0.113 seconds with exit status 0 (successful).
+ DEBUG [10ac63eb] Running [ -f /home/ubuntu/apps/anodyne-frontend/current/REVISION ] as ubuntu@35.154.240.85
+ DEBUG [10ac63eb] Command: [ -f /home/ubuntu/apps/anodyne-frontend/current/REVISION ]
+ DEBUG [10ac63eb] Finished in 0.114 seconds with exit status 0 (successful).
+ DEBUG [f2288b35] Running /usr/bin/env cat /home/ubuntu/apps/anodyne-frontend/current/REVISION 2>/dev/null as ubuntu@35.154.240.85
+ DEBUG [f2288b35] Command: /usr/bin/env cat /home/ubuntu/apps/anodyne-frontend/current/REVISION 2>/dev/null
+ DEBUG [f2288b35] 	27b00a464fdbaf46043867150614018d51aa73d2
+ DEBUG [f2288b35] Finished in 0.113 seconds with exit status 0 (successful).
+ DEBUG [36a8270a] Running [ -f /home/ubuntu/apps/anodyne-frontend/repo/HEAD ] as ubuntu@35.154.240.85
+ DEBUG [36a8270a] Command: [ -f /home/ubuntu/apps/anodyne-frontend/repo/HEAD ]
+ DEBUG [36a8270a] Finished in 0.115 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/ubuntu/apps/anodyne-frontend/repo
+ DEBUG [04babe51] Running if test ! -d /home/ubuntu/apps/anodyne-frontend/repo; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/repo'" 1>&2; false; fi as ubuntu@35.154.240.85
+ DEBUG [04babe51] Command: if test ! -d /home/ubuntu/apps/anodyne-frontend/repo; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/repo'" 1>&2; false; fi
+ DEBUG [04babe51] Finished in 0.113 seconds with exit status 0 (successful).
+  INFO [172e6f5e] Running /usr/bin/env git remote set-url origin git@github.com:anodyneweb/aw_frontend.git as ubuntu@35.154.240.85
+ DEBUG [172e6f5e] Command: cd /home/ubuntu/apps/anodyne-frontend/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-anodyne-frontend-production-m.sh" ; /usr/bin/env git remote set-url origin git@github.com:anodyneweb/aw_frontend.git )
+  INFO [172e6f5e] Finished in 0.118 seconds with exit status 0 (successful).
+  INFO [c26dd38e] Running /usr/bin/env git remote update --prune as ubuntu@35.154.240.85
+ DEBUG [c26dd38e] Command: cd /home/ubuntu/apps/anodyne-frontend/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-anodyne-frontend-production-m.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [c26dd38e] 	Fetching origin
+  INFO [c26dd38e] Finished in 2.187 seconds with exit status 0 (successful).
+ DEBUG [2243d8eb] Running if test ! -d /home/ubuntu/apps/anodyne-frontend/repo; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/repo'" 1>&2; false; fi as ubuntu@35.154.240.85
+ DEBUG [2243d8eb] Command: if test ! -d /home/ubuntu/apps/anodyne-frontend/repo; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/repo'" 1>&2; false; fi
+ DEBUG [2243d8eb] Finished in 0.059 seconds with exit status 0 (successful).
+  INFO [c166228a] Running /usr/bin/env mkdir -p /home/ubuntu/apps/anodyne-frontend/releases/20200121002237 as ubuntu@35.154.240.85
+ DEBUG [c166228a] Command: cd /home/ubuntu/apps/anodyne-frontend/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-anodyne-frontend-production-m.sh" ; /usr/bin/env mkdir -p /home/ubuntu/apps/anodyne-frontend/releases/20200121002237 )
+  INFO [c166228a] Finished in 0.119 seconds with exit status 0 (successful).
+  INFO [09ffde76] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/ubuntu/apps/anodyne-frontend/releases/20200121002237 as ubuntu@35.154.240.85
+ DEBUG [09ffde76] Command: cd /home/ubuntu/apps/anodyne-frontend/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-anodyne-frontend-production-m.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/ubuntu/apps/anodyne-frontend/releases/20200121002237 )
+  INFO [09ffde76] Finished in 0.159 seconds with exit status 0 (successful).
+ DEBUG [42e85551] Running if test ! -d /home/ubuntu/apps/anodyne-frontend/repo; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/repo'" 1>&2; false; fi as ubuntu@35.154.240.85
+ DEBUG [42e85551] Command: if test ! -d /home/ubuntu/apps/anodyne-frontend/repo; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/repo'" 1>&2; false; fi
+ DEBUG [42e85551] Finished in 0.112 seconds with exit status 0 (successful).
+ DEBUG [06a70987] Running /usr/bin/env git rev-list --max-count=1 master as ubuntu@35.154.240.85
+ DEBUG [06a70987] Command: cd /home/ubuntu/apps/anodyne-frontend/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-anodyne-frontend-production-m.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [06a70987] 	27b00a464fdbaf46043867150614018d51aa73d2
+ DEBUG [06a70987] Finished in 0.113 seconds with exit status 0 (successful).
+ DEBUG [b333bb3b] Running if test ! -d /home/ubuntu/apps/anodyne-frontend/releases/20200121002237; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/releases/20200121002237'" 1>&2; false; fi as ubuntu@35.154.240.85
+ DEBUG [b333bb3b] Command: if test ! -d /home/ubuntu/apps/anodyne-frontend/releases/20200121002237; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/releases/20200121002237'" 1>&2; false; fi
+ DEBUG [b333bb3b] Finished in 0.113 seconds with exit status 0 (successful).
+  INFO [034b0fcd] Running /usr/bin/env echo "27b00a464fdbaf46043867150614018d51aa73d2" > REVISION as ubuntu@35.154.240.85
+ DEBUG [034b0fcd] Command: cd /home/ubuntu/apps/anodyne-frontend/releases/20200121002237 && /usr/bin/env echo "27b00a464fdbaf46043867150614018d51aa73d2" > REVISION
+  INFO [034b0fcd] Finished in 0.114 seconds with exit status 0 (successful).
+  INFO [36e21fa3] Running /usr/bin/env mkdir -p /home/ubuntu/apps/anodyne-frontend/releases/20200121002237 as ubuntu@35.154.240.85
+ DEBUG [36e21fa3] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/anodyne-frontend/releases/20200121002237
+  INFO [36e21fa3] Finished in 0.113 seconds with exit status 0 (successful).
+ DEBUG [16d304c5] Running [ -L /home/ubuntu/apps/anodyne-frontend/releases/20200121002237/node_modules ] as ubuntu@35.154.240.85
+ DEBUG [16d304c5] Command: [ -L /home/ubuntu/apps/anodyne-frontend/releases/20200121002237/node_modules ]
+ DEBUG [16d304c5] Finished in 0.114 seconds with exit status 1 (failed).
+ DEBUG [437f7cbb] Running [ -d /home/ubuntu/apps/anodyne-frontend/releases/20200121002237/node_modules ] as ubuntu@35.154.240.85
+ DEBUG [437f7cbb] Command: [ -d /home/ubuntu/apps/anodyne-frontend/releases/20200121002237/node_modules ]
+ DEBUG [437f7cbb] Finished in 0.111 seconds with exit status 1 (failed).
+  INFO [26276d20] Running /usr/bin/env ln -s /home/ubuntu/apps/anodyne-frontend/shared/node_modules /home/ubuntu/apps/anodyne-frontend/releases/20200121002237/node_modules as ubuntu@35.154.240.85
+ DEBUG [26276d20] Command: /usr/bin/env ln -s /home/ubuntu/apps/anodyne-frontend/shared/node_modules /home/ubuntu/apps/anodyne-frontend/releases/20200121002237/node_modules
+  INFO [26276d20] Finished in 0.116 seconds with exit status 0 (successful).
+  INFO [77c889d5] Running /usr/bin/env ln -s /home/ubuntu/apps/anodyne-frontend/releases/20200121002237 /home/ubuntu/apps/anodyne-frontend/releases/current as ubuntu@35.154.240.85
+ DEBUG [77c889d5] Command: /usr/bin/env ln -s /home/ubuntu/apps/anodyne-frontend/releases/20200121002237 /home/ubuntu/apps/anodyne-frontend/releases/current
+  INFO [77c889d5] Finished in 0.114 seconds with exit status 0 (successful).
+  INFO [53c8221c] Running /usr/bin/env mv /home/ubuntu/apps/anodyne-frontend/releases/current /home/ubuntu/apps/anodyne-frontend as ubuntu@35.154.240.85
+ DEBUG [53c8221c] Command: /usr/bin/env mv /home/ubuntu/apps/anodyne-frontend/releases/current /home/ubuntu/apps/anodyne-frontend
+  INFO [53c8221c] Finished in 0.117 seconds with exit status 0 (successful).
+ DEBUG [6f40e1ff] Running if test ! -d /home/ubuntu/apps/anodyne-frontend/releases/20200121002237; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/releases/20200121002237'" 1>&2; false; fi as ubuntu@35.154.240.85
+ DEBUG [6f40e1ff] Command: if test ! -d /home/ubuntu/apps/anodyne-frontend/releases/20200121002237; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/releases/20200121002237'" 1>&2; false; fi
+ DEBUG [6f40e1ff] Finished in 0.109 seconds with exit status 0 (successful).
+ DEBUG [6e0646fd] Running [ -d /home/ubuntu/apps/anodyne-frontend/current/node_modules ] as ubuntu@35.154.240.85
+ DEBUG [6e0646fd] Command: [ -d /home/ubuntu/apps/anodyne-frontend/current/node_modules ]
+ DEBUG [6e0646fd] Finished in 0.112 seconds with exit status 0 (successful).
+  INFO [4470d042] Running /usr/bin/env npm install as ubuntu@35.154.240.85
+ DEBUG [4470d042] Command: cd /home/ubuntu/apps/anodyne-frontend/releases/20200121002237 && /usr/bin/env npm install
+ DEBUG [4470d042] 	npm
+ DEBUG [4470d042] 	 
+ DEBUG [4470d042] 	WARN
+ DEBUG [4470d042] 	 
+ DEBUG [4470d042] 	deprecated
+ DEBUG [4470d042] 	 core-js@2.6.11: core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.
+ DEBUG [4470d042] 	
+> core-js@2.6.11 postinstall /home/ubuntu/apps/anodyne-frontend/releases/20200121002237/node_modules/@angular-devkit/build-angular/node_modules/babel-runtime/node_modules/core-js
+> node -e "try{require('./postinstall')}catch(e){}"
+
+ DEBUG [4470d042] 	
+> core-js@3.2.1 postinstall /home/ubuntu/apps/anodyne-frontend/releases/20200121002237/node_modules/@angular-devkit/build-angular/node_modules/core-js
+> node scripts/postinstall || echo "ignore"
+
+ DEBUG [4470d042] 	[96mThank you for using core-js ([94m https://github.com/zloirock/core-js [96m) for polyfilling JavaScript standard library![0m
+
+ DEBUG [4470d042] 	[96mThe project needs your help! Please consider supporting of core-js on Open Collective or Patreon: [0m
+ DEBUG [4470d042] 	[96m>[94m https://opencollective.com/core-js [0m
+ DEBUG [4470d042] 	[96m>[94m https://www.patreon.com/zloirock [0m
+
+ DEBUG [4470d042] 	[96mAlso, the author of core-js ([94m https://github.com/zloirock [96m) is looking for a good job -)[0m
+
+ DEBUG [4470d042] 	npm
+ DEBUG [4470d042] 	 
+ DEBUG [4470d042] 	WARN
+ DEBUG [4470d042] 	 @ngtools/webpack@8.3.21 requires a peer of @angular/compiler-cli@^8.0.0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [4470d042] 	npm
+ DEBUG [4470d042] 	 
+ DEBUG [4470d042] 	WARN
+ DEBUG [4470d042] 	 tsutils@2.29.0 requires a peer of typescript@>=2.1.0 || >=2.1.0-dev || >=2.2.0-dev || >=2.3.0-dev || >=2.4.0-dev || >=2.5.0-dev || >=2.6.0-dev || >=2.7.0-dev || >=2.8.0-dev || >=2.9.0-dev || >= 3.0.0-dev || >= 3.1.0-dev but none is installed. You must install peer dependencies yourself.
+ DEBUG [4470d042] 	npm
+ DEBUG [4470d042] 	 
+ DEBUG [4470d042] 	WARN
+ DEBUG [4470d042] 	 
+ DEBUG [4470d042] 	optional
+ DEBUG [4470d042] 	 SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.11 (node_modules/karma/node_modules/fsevents):
+ DEBUG [4470d042] 	npm
+ DEBUG [4470d042] 	 
+ DEBUG [4470d042] 	WARN
+ DEBUG [4470d042] 	 
+ DEBUG [4470d042] 	notsup
+ DEBUG [4470d042] 	 SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.11: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+ DEBUG [4470d042] 	npm
+ DEBUG [4470d042] 	 
+ DEBUG [4470d042] 	WARN
+ DEBUG [4470d042] 	 
+ DEBUG [4470d042] 	optional
+ DEBUG [4470d042] 	 SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.11 (node_modules/@angular/compiler-cli/node_modules/fsevents):
+ DEBUG [4470d042] 	npm
+ DEBUG [4470d042] 	 
+ DEBUG [4470d042] 	WARN
+ DEBUG [4470d042] 	 
+ DEBUG [4470d042] 	notsup
+ DEBUG [4470d042] 	 SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.11: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+ DEBUG [4470d042] 	npm
+ DEBUG [4470d042] 	 
+ DEBUG [4470d042] 	WARN
+ DEBUG [4470d042] 	 
+ DEBUG [4470d042] 	optional
+ DEBUG [4470d042] 	 SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.11 (node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents):
+ DEBUG [4470d042] 	npm
+ DEBUG [4470d042] 	 
+ DEBUG [4470d042] 	WARN
+ DEBUG [4470d042] 	 
+ DEBUG [4470d042] 	notsup
+ DEBUG [4470d042] 	 SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.11: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+ DEBUG [4470d042] 	npm
+ DEBUG [4470d042] 	 
+ DEBUG [4470d042] 	WARN
+ DEBUG [4470d042] 	 
+ DEBUG [4470d042] 	optional
+ DEBUG [4470d042] 	 SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.11 (node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents):
+ DEBUG [4470d042] 	npm
+ DEBUG [4470d042] 	 
+ DEBUG [4470d042] 	WARN
+ DEBUG [4470d042] 	 
+ DEBUG [4470d042] 	notsup
+ DEBUG [4470d042] 	 SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.11: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+ DEBUG [4470d042] 	npm
+ DEBUG [4470d042] 	 
+ DEBUG [4470d042] 	WARN
+ DEBUG [4470d042] 	 
+ DEBUG [4470d042] 	optional
+ DEBUG [4470d042] 	 SKIPPING OPTIONAL DEPENDENCY: fsevents@2.1.2 (node_modules/@angular-devkit/build-angular/node_modules/fsevents):
+ DEBUG [4470d042] 	npm
+ DEBUG [4470d042] 	 
+ DEBUG [4470d042] 	WARN
+ DEBUG [4470d042] 	 
+ DEBUG [4470d042] 	notsup
+ DEBUG [4470d042] 	 SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.1.2: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+ DEBUG [4470d042] 	
+ DEBUG [4470d042] 	added 19 packages from 24 contributors, removed 745 packages, moved 858 packages and audited 18888 packages in 39.064s
+ DEBUG [4470d042] 	
+22 packages are looking for funding
+  run `npm fund` for details
+
+ DEBUG [4470d042] 	found 2 high severity vulnerabilities
+  run `npm audit fix` to fix them, or `npm audit` for details
+  INFO [4470d042] Finished in 41.230 seconds with exit status 0 (successful).
+ DEBUG [5c639afc] Running if test ! -d /home/ubuntu/apps/anodyne-frontend/releases/20200121002237; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/releases/20200121002237'" 1>&2; false; fi as ubuntu@35.154.240.85
+ DEBUG [5c639afc] Command: if test ! -d /home/ubuntu/apps/anodyne-frontend/releases/20200121002237; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/releases/20200121002237'" 1>&2; false; fi
+ DEBUG [5c639afc] Finished in 0.115 seconds with exit status 0 (successful).
+ DEBUG [407243b6] Running /usr/bin/env ls -x /home/ubuntu/apps/anodyne-frontend/releases as ubuntu@35.154.240.85
+ DEBUG [407243b6] Command: /usr/bin/env ls -x /home/ubuntu/apps/anodyne-frontend/releases
+ DEBUG [407243b6] 	20200115071422	20200115072819	20200120233734	20200120234010	20200121001239
+20200121002104	20200121002237
+ DEBUG [407243b6] Finished in 0.113 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 7 deployed releases on 35.154.240.85
+ DEBUG [a35d249e] Running [ -d /home/ubuntu/apps/anodyne-frontend/current ] as ubuntu@35.154.240.85
+ DEBUG [a35d249e] Command: [ -d /home/ubuntu/apps/anodyne-frontend/current ]
+ DEBUG [a35d249e] Finished in 0.114 seconds with exit status 0 (successful).
+ DEBUG [7abcb632] Running /usr/bin/env readlink /home/ubuntu/apps/anodyne-frontend/current as ubuntu@35.154.240.85
+ DEBUG [7abcb632] Command: /usr/bin/env readlink /home/ubuntu/apps/anodyne-frontend/current
+ DEBUG [7abcb632] 	/home/ubuntu/apps/anodyne-frontend/releases/20200121002237
+ DEBUG [7abcb632] Finished in 0.112 seconds with exit status 0 (successful).
+  INFO [e1c5c5a7] Running /usr/bin/env rm -rf /home/ubuntu/apps/anodyne-frontend/releases/20200115071422 /home/ubuntu/apps/anodyne-frontend/releases/20200115072819 as ubuntu@35.154.240.85
+ DEBUG [e1c5c5a7] Command: /usr/bin/env rm -rf /home/ubuntu/apps/anodyne-frontend/releases/20200115071422 /home/ubuntu/apps/anodyne-frontend/releases/20200115072819
+  INFO [e1c5c5a7] Finished in 0.128 seconds with exit status 0 (successful).
+ DEBUG [fa767597] Running if test ! -d /home/ubuntu/apps/anodyne-frontend/releases; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/releases'" 1>&2; false; fi as ubuntu@35.154.240.85
+ DEBUG [fa767597] Command: if test ! -d /home/ubuntu/apps/anodyne-frontend/releases; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/releases'" 1>&2; false; fi
+ DEBUG [fa767597] Finished in 0.116 seconds with exit status 0 (successful).
+  INFO [49c6e8c4] Running /usr/bin/env echo "Branch master (at 27b00a464fdbaf46043867150614018d51aa73d2) deployed as release 20200121002237 by m" >> /home/ubuntu/apps/anodyne-frontend/revisions.log as ubuntu@35.154.240.85
+ DEBUG [49c6e8c4] Command: cd /home/ubuntu/apps/anodyne-frontend/releases && /usr/bin/env echo "Branch master (at 27b00a464fdbaf46043867150614018d51aa73d2) deployed as release 20200121002237 by m" >> /home/ubuntu/apps/anodyne-frontend/revisions.log
+  INFO [49c6e8c4] Finished in 0.113 seconds with exit status 0 (successful).

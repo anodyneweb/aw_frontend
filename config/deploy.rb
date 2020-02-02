@@ -65,7 +65,7 @@ namespace :deploy do
   task :build do
     on roles(:app), in: :sequence, wait: 5 do
       within release_path do
-        execute "ng build --prod"
+        # execute "ng build --prod"
       end
     end
   end

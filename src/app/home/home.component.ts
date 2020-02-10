@@ -52,6 +52,64 @@ const industries: IndustryElement[] = [
       country: "India",
       created: "2019-12-29T18:56:33.270223Z",
       
+  },
+  {
+    name: "INdustry1",
+    dir: "",
+    industry_code: "INdustry1",
+    status: "Live",
+    type: "Aluminium",
+    industry_id: "INdustry1",
+    address: "INdustry1",
+    zipcode: "1",
+    state: "Delhi",
+    city: "Delhi",
+    country: "India",
+    created: "2019-12-29T18:56:18.079519Z",
+  },
+  {
+      name: "INdustry12",
+      dir: "",
+      industry_code: "INdustry12",
+      status: "Live",
+      type: "Aluminium",
+      industry_id: "INdustry12",
+      address: "INdustry12",
+      zipcode: "110099",
+      state: "Delhi",
+      city: "Delhi",
+      country: "India",
+      created: "2019-12-29T18:56:33.270223Z",
+      
+  },
+  {
+    name: "INdustry1",
+    dir: "",
+    industry_code: "INdustry1",
+    status: "Live",
+    type: "Aluminium",
+    industry_id: "INdustry1",
+    address: "INdustry1",
+    zipcode: "1",
+    state: "Delhi",
+    city: "Delhi",
+    country: "India",
+    created: "2019-12-29T18:56:18.079519Z",
+  },
+  {
+      name: "INdustry12",
+      dir: "",
+      industry_code: "INdustry12",
+      status: "Live",
+      type: "Aluminium",
+      industry_id: "INdustry12",
+      address: "INdustry12",
+      zipcode: "110099",
+      state: "Delhi",
+      city: "Delhi",
+      country: "India",
+      created: "2019-12-29T18:56:33.270223Z",
+      
   }
 ];
 
@@ -85,7 +143,6 @@ export class HomeComponent implements OnInit {
    }
 
   ngOnInit() {
-    console.log(this.currentUser)
     if (this.currentUser){
       this.loadIndustriesInfo()
     }

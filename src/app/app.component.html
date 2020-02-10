@@ -8,6 +8,8 @@
     <span class="menu-spacer"></span>
     <div>
       <a mat-button [routerLink]="'/dashboard'"> Dashboard </a>
+      <a mat-button [routerLink]="'/users'"> Users </a>
+      <a mat-button [routerLink]="'/stations'"> Station </a>
       <a *ngIf=currentUser mat-button (click)="logout()"> Logout </a>
     </div>
   </mat-toolbar-row>

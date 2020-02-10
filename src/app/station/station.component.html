@@ -1,0 +1,113 @@
+<h1>Stations</h1>
+
+<table mat-table [dataSource]="dataSource">
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="pcb">
+    <th mat-header-cell *matHeaderCellDef> PCB </th>
+    <td mat-cell *matCellDef="let element"> {{element.pcb}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="prefix">
+    <th mat-header-cell *matHeaderCellDef> Prefix </th>
+    <td mat-cell *matCellDef="let element"> {{element.prefix}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="version">
+    <th mat-header-cell *matHeaderCellDef> Version </th>
+    <td mat-cell *matCellDef="let element"> {{element.version}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="address">
+    <th mat-header-cell *matHeaderCellDef> Address </th>
+    <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="zipcode">
+    <th mat-header-cell *matHeaderCellDef> Zipcode </th>
+    <td mat-cell *matCellDef="let element"> {{element.last_login}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="longitude">
+    <th mat-header-cell *matHeaderCellDef> Longitude </th>
+    <td mat-cell *matCellDef="let element"> {{element.longitude}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="latitude">
+    <th mat-header-cell *matHeaderCellDef> Latitude </th>
+    <td mat-cell *matCellDef="let element"> {{element.latitude}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="state">
+    <th mat-header-cell *matHeaderCellDef> State </th>
+    <td mat-cell *matCellDef="let element"> {{element.state}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="city">
+    <th mat-header-cell *matHeaderCellDef> City </th>
+    <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="country">
+    <th mat-header-cell *matHeaderCellDef> Country </th>
+    <td mat-cell *matCellDef="let element"> {{element.country}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="user_email">
+    <th mat-header-cell *matHeaderCellDef> User Email </th>
+    <td mat-cell *matCellDef="let element"> {{element.user_email}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="user_ph">
+    <th mat-header-cell *matHeaderCellDef> User Phone </th>
+    <td mat-cell *matCellDef="let element"> {{element.user_ph}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="seasonal_offline">
+    <th mat-header-cell *matHeaderCellDef> Seasonal Offline </th>
+    <td mat-cell *matCellDef="let element"> {{element.seasonal_offline}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="site_status">
+    <th mat-header-cell *matHeaderCellDef> Site Status </th>
+    <td mat-cell *matCellDef="let element"> {{element.site_status}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="monitoring_type">
+    <th mat-header-cell *matHeaderCellDef> Monitoring Type </th>
+    <td mat-cell *matCellDef="let element"> {{element.monitoring_type}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="process_attached">
+    <th mat-header-cell *matHeaderCellDef> Process Attached </th>
+    <td mat-cell *matCellDef="let element"> {{element.process_attached}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="ganga_basin">
+    <th mat-header-cell *matHeaderCellDef> Ganga Basin </th>
+    <td mat-cell *matCellDef="let element"> {{element.ganga_basin}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="approval_date">
+    <th mat-header-cell *matHeaderCellDef> Approval Date </th>
+    <td mat-cell *matCellDef="let element"> {{element.approval_date}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="camera">
+    <th mat-header-cell *matHeaderCellDef> Camera </th>
+    <td mat-cell *matCellDef="let element"> {{element.camera}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="created">
+    <th mat-header-cell *matHeaderCellDef> Created </th>
+    <td mat-cell *matCellDef="let element"> {{element.created}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+</table>

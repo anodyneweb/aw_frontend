@@ -38,6 +38,8 @@ import {
   MatButtonModule, MatCardModule, MatDialogModule, MatInputModule, MatTableModule,
   MatToolbarModule, MatMenuModule,MatIconModule, MatProgressSpinnerModule, 
 } from '@angular/material';
+import { StationComponent } from './station/station.component';
+import { UserComponent } from './user/user.component';
 
 
 
@@ -45,7 +47,9 @@ import {
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    StationComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

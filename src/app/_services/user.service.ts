@@ -1,13 +1,23 @@
 ﻿import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../_models';
-
+import { AuthenticationService } from './authentication.service';
 @Injectable({ providedIn: 'root' })
 export class UserService {
-  constructor(private http: HttpClient) { }
+  currentUser:User;
+  httpHeaderOptions = new HttpHeaders({'Content-Type':'application/json; charset=utf-8'});
+  constructor(
+    private http: HttpClient,
+    private authenticationService: AuthenticationService,
+  ) { 
+    this.currentUser = this.authenticationService.currentUserValue;
+    if (this.currentUser){
+      this.httpHeaderOptions = this.httpHeaderOptions.set( 'Authorization', 'Bearer ' + this.currentUser['access'])
+    }
+  }
 
   getAll() {
-      return this.http.get<User[]>('http://ec2-13-234-78-142.ap-south-1.compute.amazonaws.com:8000/api/users/');
+      return this.http.get<User[]>('http://ec2-3-6-144-180.ap-south-1.compute.amazonaws.com:8000/api/users/', {headers: this.httpHeaderOptions});
   }
 
   register(user: User) {

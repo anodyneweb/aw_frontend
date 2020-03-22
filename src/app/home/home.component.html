@@ -1,6 +1,6 @@
 <h1>Industries</h1>
 
-<table mat-table [dataSource]="dataSource">
+<table mat-table [dataSource]="dataSource" matSort matSortActive="created" matSortDisableClear matSortDirection="asc">
 
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef> Name </th>
@@ -64,5 +64,5 @@
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-
 </table>
+<mat-paginator [length]="resultsLength" [pageSize]="10"></mat-paginator>

@@ -4,32 +4,27 @@ import { FormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { first } from 'rxjs/operators';
 import { User } from '../_models';
 import { AlertService, AuthenticationService, UserService } from '../_services';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatTableDataSource } from '@angular/material/table';
+import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 
 
-export interface UserElement {
-  name: string;
-  email: string;
-  type: string;
-  phone: string;
-  created: string;
-  last_login: string;
-  last_pwd_updated: string;
+// export interface UserElement {
+//   name: string;
+//   email: string;
+//   type: string;
+//   phone: string;
+//   created: string;
+//   last_login: string;
+//   last_pwd_updated: string;
 
-}
+// }
 
-const users: UserElement[] = [
-  {
-    name: "Mohan Kumar",
-    email: "mohan@aaxisnano.com",
-    type: "CUSTOMER",
-    phone: "9910010837",
-    created: "2019-05-08T12:26:27.879376",
-    last_login: "2019-05-08T12:26:27.879395",
-    last_pwd_updated: "2019-10-12"
-  }
-];
+// const users: UserElement[] = [
+//   {
+//     name: "Mohan Kumar",
+//     email: "mohan@aaxisnano.com",
+//     is_active: true
+//   }
+// ];
 
 @Component({
   selector: 'app-user',
@@ -41,14 +36,15 @@ export class UserComponent implements OnInit {
 
   currentUser:User;
   returnUrl = '/'
-  displayedColumns: string[] = ['name', 'email', 'type', 'phone', 'created', 'last_login', 'last_pwd_updated'];
-  dataSource = new MatTableDataSource<UserElement>(users);
+  displayedColumns: string[] = ['name', 'email'];
+  dataSource = new MatTableDataSource();
+  resultsLength = 0;
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
 
 
   constructor(
-    private route: ActivatedRoute,
     private router: Router,
     private alertService: AlertService,
     private authenticationService: AuthenticationService,
@@ -73,7 +69,9 @@ export class UserComponent implements OnInit {
       .pipe(first())
       .subscribe(
         data => {
-          this.router.navigate([this.returnUrl]);
+          this.dataSource = data['results'];
+          this.resultsLength = data['count'];
+          // this.router.navigate([this.returnUrl]);
         },
         error => {
           this.alertService.error(error);

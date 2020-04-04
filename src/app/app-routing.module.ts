@@ -4,12 +4,14 @@ import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
 import { StationComponent } from './station/station.component';
 import { LoginComponent } from './login/login.component';
+import { ManageIndustriesComponent } from './manage-industries/manage-industries.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: HomeComponent },
   { path: 'users', component: UserComponent },
   { path: 'stations', component: StationComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'add_industry', component: ManageIndustriesComponent },
 
   // otherwise redirect to home
   { path: '**', redirectTo: '/login' }

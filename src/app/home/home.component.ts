@@ -1,9 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { FormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { first } from 'rxjs/operators';
 import { User } from '../_models';
-import { AlertService, IndustriesService, AuthenticationService, UserService } from '../_services';
+import { AlertService, IndustriesService, AuthenticationService } from '../_services';
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 
 @Component({

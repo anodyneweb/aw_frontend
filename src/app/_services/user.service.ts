@@ -17,7 +17,7 @@ export class UserService {
   }
 
   getAll() {
-      return this.http.get<User[]>('http://ec2-3-6-144-180.ap-south-1.compute.amazonaws.com:8000/api/users/', {headers: this.httpHeaderOptions});
+      return this.http.get<User[]>('http://ec2-3-6-144-180.ap-south-1.compute.amazonaws.com/api/users/', {headers: this.httpHeaderOptions});
   }
 
   register(user: User) {

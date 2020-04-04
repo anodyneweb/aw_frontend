@@ -40,6 +40,7 @@ import {
 } from '@angular/material';
 import { StationComponent } from './station/station.component';
 import { UserComponent } from './user/user.component';
+import { ManageIndustriesComponent } from './manage-industries/manage-industries.component';
 
 
 
@@ -49,7 +50,8 @@ import { UserComponent } from './user/user.component';
     HomeComponent,
     LoginComponent,
     StationComponent,
-    UserComponent
+    UserComponent,
+    ManageIndustriesComponent
   ],
   imports: [
     BrowserModule,

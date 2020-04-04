@@ -1,0 +1,71 @@
+<mat-card>
+  <mat-card-title>Add Industry</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="industryForm" (ngSubmit)="createIndustry()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <mat-form-field>
+          <input matInput id="name" type="text" formControlName="name" class="form-control">
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <label for="industry_code">Industry Code</label>
+        <mat-form-field>
+          <input matInput id="industry_code" type="text" formControlName="industry_code" class="form-control">
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <label for="status">Status</label>
+        <mat-form-field>
+          <input matInput id="status" type="text" formControlName="status" class="form-control">
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <label for="type">Type</label>
+        <mat-form-field>
+          <input matInput id="type" type="text" formControlName="type" class="form-control">
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <label for="address">User</label>
+        <mat-select>
+          <mat-option *ngFor="let user of all_users" [value]="user.id">
+            {{user.name}}
+          </mat-option>
+        </mat-select>
+      </div>
+      <div class="form-group">
+        <label for="address">Address</label>
+        <mat-form-field>
+          <input matInput id="address" type="text" formControlName="address" class="form-control">
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <label for="zipcode">Zipcode</label>
+        <mat-form-field>
+          <input matInput id="zipcode" type="text" formControlName="zipcode" class="form-control">
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <label for="address">City</label>
+        <mat-select [formControl]="city">
+          <mat-option *ngFor="let city of all_cities" [value]="city.id">
+            {{city.name}}
+          </mat-option>
+        </mat-select>
+      </div>
+      <div class="form-group">
+        <label for="address">State</label>
+        <mat-select [formControl]="state">
+          <mat-option *ngFor="let state of all_states" [value]="state.id">
+            {{state.name}}
+          </mat-option>
+        </mat-select>
+      </div>
+      <button mat-button [disabled]="loading" class="btn btn-primary">
+        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+        Add Industry
+      </button>
+    </form>
+  </mat-card-content>
+</mat-card>

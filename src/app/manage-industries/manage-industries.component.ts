@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { FormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { User } from '../_models';
 import { AlertService, IndustriesService, AuthenticationService, UserService, MiscellaneousService } from '../_services';
-import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
-
 
 @Component({
   selector: 'app-manage-industries',
@@ -13,12 +11,14 @@ import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
   styleUrls: ['./manage-industries.component.scss']
 })
 export class ManageIndustriesComponent implements OnInit {
-  currentUser:User;
-  returnUrl = '/industries'
+  currentUser: User;
+  returnUrl = '/dashboard'
   industryForm: FormGroup;
   all_cities = [];
   all_states = [];
   all_users = [];
+  all_categories = [];
+  form_errors = {};
   constructor(
     private router: Router,
     private formBuilder: FormBuilder,
@@ -36,8 +36,8 @@ export class ManageIndustriesComponent implements OnInit {
       this.loadCities();
       this.loadStates();
       this.loadUsers();
+      this.loadCategories();
       this.industryForm = this.formBuilder.group({
-        "uuid": "",
         "name": "",
         "industry_code": "",
         "status": "",
@@ -95,9 +95,20 @@ export class ManageIndustriesComponent implements OnInit {
         });
   }
 
+  loadCategories() {
+    this.MiscellaneousService.getAllCategories()
+      .pipe(first())
+      .subscribe(
+        data => {
+          this.all_categories = data['results'];   
+        },
+        error => {
+          this.alertService.error(error);
+        });
+  }
+
   createIndustry() {
     this.alertService.clear();
-    console.log(this.industryForm);
     this.IndustriesService.addIndustry(this.industryForm)
       .pipe(first())
       .subscribe(
@@ -106,7 +117,8 @@ export class ManageIndustriesComponent implements OnInit {
           this.router.navigate([this.returnUrl]);
         },
         error => {
-          this.alertService.error(error);
+          this.form_errors = error.error
+          this.alertService.error(error.error.messages[0].message);
         });
   }
 

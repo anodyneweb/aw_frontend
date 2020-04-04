@@ -22,6 +22,9 @@ export class MiscellaneousService {
 
   getAllCities(){
     return this.http.get<City[]>('http://ec2-3-6-144-180.ap-south-1.compute.amazonaws.com/api/city/', { headers: this.httpHeaderOptions });
-  
+  }
+
+  getAllCategories() {
+    return this.http.get<City[]>('http://ec2-3-6-144-180.ap-south-1.compute.amazonaws.com/api/category/', { headers: this.httpHeaderOptions });
   }
 }

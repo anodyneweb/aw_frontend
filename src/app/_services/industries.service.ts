@@ -20,8 +20,6 @@ export class IndustriesService {
   }
 
   addIndustry(industry_body){
-    console.log(industry_body.value);
     return this.http.post<Industry>('http://ec2-3-6-144-180.ap-south-1.compute.amazonaws.com/api/industry/',industry_body.value, {headers: this.httpHeaderOptions});
-  
   }
 }

@@ -41,6 +41,7 @@ import {
 import { StationComponent } from './station/station.component';
 import { UserComponent } from './user/user.component';
 import { ManageIndustriesComponent } from './manage-industries/manage-industries.component';
+import { ManageStationsComponent } from './manage-stations/manage-stations.component';
 
 
 
@@ -51,7 +52,8 @@ import { ManageIndustriesComponent } from './manage-industries/manage-industries
     LoginComponent,
     StationComponent,
     UserComponent,
-    ManageIndustriesComponent
+    ManageIndustriesComponent,
+    ManageStationsComponent
   ],
   imports: [
     BrowserModule,

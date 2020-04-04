@@ -1,5 +1,7 @@
 <h1>Stations</h1>
 
+<button mat-stroked-button color="primary" (click)="router.navigate(['/add_station']);">Add Station</button>
+
 <table mat-table [dataSource]="dataSource" matSort matSortActive="created" matSortDisableClear matSortDirection="asc">
 
   <ng-container matColumnDef="name">

@@ -18,7 +18,11 @@ export class StationsService {
   }
 
   getAll() {
-    return this.http.get<Station[]>('http://ec2-3-6-144-180.ap-south-1.compute.amazonaws.com:8000/api/station/', { headers: this.httpHeaderOptions });
+    return this.http.get<Station[]>('http://ec2-3-6-144-180.ap-south-1.compute.amazonaws.com/api/station/', { headers: this.httpHeaderOptions });
+  }
+
+  addStation(station_body){
+    return this.http.post<Station>('http://ec2-3-6-144-180.ap-south-1.compute.amazonaws.com/api/station/',station_body.value, {headers: this.httpHeaderOptions});
   }
 
 }

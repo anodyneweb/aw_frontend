@@ -5,62 +5,80 @@
       <div class="form-group">
         <label for="name">Name</label>
         <mat-form-field>
-          <input matInput id="name" type="text" formControlName="name" class="form-control">
+          <input matInput id="name" type="text" formControlName="name" class="form-control" required>
         </mat-form-field>
+        <span class="mat-error form-error" *ngIf="form_errors.hasOwnProperty('name')">{{form_errors.name[0]}}</span>
+      </div>
+      <div class="form-group">
+        <label for="industry_id">Industry Id</label>
+        <mat-form-field>
+          <input matInput id="industry_id" type="text" formControlName="industry_id" class="form-control" required>
+        </mat-form-field>
+        <span class="mat-error form-error" *ngIf="form_errors.hasOwnProperty('industry_id')">{{form_errors.industry_id[0]}}</span>
       </div>
       <div class="form-group">
         <label for="industry_code">Industry Code</label>
         <mat-form-field>
-          <input matInput id="industry_code" type="text" formControlName="industry_code" class="form-control">
+          <input matInput id="industry_code" type="text" formControlName="industry_code" class="form-control" required>
         </mat-form-field>
+        <span class="mat-error form-error" *ngIf="form_errors.hasOwnProperty('industry_code')">{{form_errors.industry_code[0]}}</span>
       </div>
       <div class="form-group">
         <label for="status">Status</label>
         <mat-form-field>
-          <input matInput id="status" type="text" formControlName="status" class="form-control">
+          <input matInput id="status" type="text" formControlName="status" class="form-control" required>
         </mat-form-field>
+        <span class="mat-error form-error" *ngIf="form_errors.hasOwnProperty('status')">{{form_errors.status[0]}}</span>
       </div>
       <div class="form-group">
         <label for="type">Type</label>
-        <mat-form-field>
-          <input matInput id="type" type="text" formControlName="type" class="form-control">
-        </mat-form-field>
+        <mat-select formControlName="type">
+          <mat-option *ngFor="let category of all_categories" [value]="category.name">
+            {{category.name}}
+          </mat-option>
+        </mat-select>
+        <span class="mat-error form-error" *ngIf="form_errors.hasOwnProperty('type')">{{form_errors.type[0]}}</span>
       </div>
       <div class="form-group">
         <label for="address">User</label>
-        <mat-select>
+        <mat-select formControlName="user">
           <mat-option *ngFor="let user of all_users" [value]="user.id">
             {{user.name}}
           </mat-option>
         </mat-select>
+        <span class="mat-error form-error" *ngIf="form_errors.hasOwnProperty('user')">{{form_errors.user[0]}}</span>
       </div>
       <div class="form-group">
         <label for="address">Address</label>
         <mat-form-field>
-          <input matInput id="address" type="text" formControlName="address" class="form-control">
+          <input matInput id="address" type="text" formControlName="address" class="form-control" required>
         </mat-form-field>
+        <span class="mat-error form-error" *ngIf="form_errors.hasOwnProperty('address')">{{form_errors.address[0]}}</span>
       </div>
       <div class="form-group">
         <label for="zipcode">Zipcode</label>
         <mat-form-field>
           <input matInput id="zipcode" type="text" formControlName="zipcode" class="form-control">
         </mat-form-field>
+        <span class="mat-error form-error" *ngIf="form_errors.hasOwnProperty('zipcode')">{{form_errors.zipcode[0]}}</span>
       </div>
       <div class="form-group">
         <label for="address">City</label>
-        <mat-select [formControl]="city">
+        <mat-select formControlName="city">
           <mat-option *ngFor="let city of all_cities" [value]="city.id">
             {{city.name}}
           </mat-option>
         </mat-select>
+        <span class="mat-error form-error" *ngIf="form_errors.hasOwnProperty('city')">{{form_errors.city[0]}}</span>
       </div>
       <div class="form-group">
         <label for="address">State</label>
-        <mat-select [formControl]="state">
-          <mat-option *ngFor="let state of all_states" [value]="state.id">
+        <mat-select formControlName="state">
+          <mat-option *ngFor="let state of all_states" [value]="state.name">
             {{state.name}}
           </mat-option>
         </mat-select>
+        <span class="mat-error form-error" *ngIf="form_errors.hasOwnProperty('state')">{{form_errors.state[0]}}</span>
       </div>
       <button mat-button [disabled]="loading" class="btn btn-primary">
         <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>

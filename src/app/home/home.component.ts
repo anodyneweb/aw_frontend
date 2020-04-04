@@ -31,7 +31,6 @@ export class HomeComponent implements OnInit {
    }
 
   ngOnInit() {
-    console.log(this.currentUser)
     if (this.currentUser){
       this.loadIndustriesInfo();
     }

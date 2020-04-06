@@ -1,6 +1,8 @@
 <h1>Stations</h1>
 
-<button mat-stroked-button color="primary" (click)="router.navigate(['/add_station']);">Add Station</button>
+<!-- <button mat-stroked-button color="primary" (click)="router.navigate(['/add_station']);">Add Station</button> -->
+
+<a mat-button [routerLink]="'/add_station'"> Add Station </a>
 
 <table mat-table [dataSource]="dataSource" matSort matSortActive="created" matSortDisableClear matSortDirection="asc">
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { User } from '../_models';
 import { AlertService, IndustriesService, AuthenticationService, UserService, MiscellaneousService } from '../_services';
@@ -11,6 +11,7 @@ import { AlertService, IndustriesService, AuthenticationService, UserService, Mi
   styleUrls: ['./manage-industries.component.scss']
 })
 export class ManageIndustriesComponent implements OnInit {
+  loading = false;
   currentUser: User;
   returnUrl = '/dashboard'
   industryForm: FormGroup;
@@ -18,7 +19,7 @@ export class ManageIndustriesComponent implements OnInit {
   all_states = [];
   all_users = [];
   all_categories = [];
-  form_errors = {};
+  form_errors :any;
   constructor(
     private router: Router,
     private formBuilder: FormBuilder,
@@ -38,16 +39,16 @@ export class ManageIndustriesComponent implements OnInit {
       this.loadUsers();
       this.loadCategories();
       this.industryForm = this.formBuilder.group({
-        "name": "",
-        "industry_code": "",
-        "status": "",
-        "type": "",
-        "industry_id": "",
-        "address": "",
-        "zipcode": "",
-        "user": "",
-        "state": "",
-        "city": ""
+        name: ['', Validators.required],
+        industry_code: ['', Validators.required],
+        status: ['', Validators.required],
+        type: ['', Validators.required],
+        industry_id: ['', Validators.required],
+        address: ['', Validators.required],
+        zipcode: ['', Validators.required],
+        user: ['', Validators.required],
+        state: ['', Validators.required],
+        city: ['', Validators.required],
       })
     }
     else{
@@ -112,7 +113,7 @@ export class ManageIndustriesComponent implements OnInit {
     this.IndustriesService.addIndustry(this.industryForm)
       .pipe(first())
       .subscribe(
-        data => {
+        (data: any) => {
           this.alertService.error('Industry created successfully');
           this.router.navigate([this.returnUrl]);
         },

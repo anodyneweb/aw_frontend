@@ -5,7 +5,7 @@
       <div class="form-group">
         <label for="name">Name</label>
         <mat-form-field>
-          <input matInput id="name" type="text" formControlName="name" class="form-control" required>
+          <input matInput id="name" type="text" formControlName="name" name="name" class="form-control" required>
         </mat-form-field>
         <span class="mat-error form-error" *ngIf="form_errors.hasOwnProperty('name')">{{form_errors.name[0]}}</span>
       </div>

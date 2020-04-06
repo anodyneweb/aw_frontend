@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { User, Station } from '../_models';
 import { AuthenticationService, AlertService, MiscellaneousService, StationsService  } from '../_services';
@@ -11,13 +11,13 @@ import { AuthenticationService, AlertService, MiscellaneousService, StationsServ
   styleUrls: ['./manage-stations.component.scss']
 })
 export class ManageStationsComponent implements OnInit {
-  
+  loading = false;
   currentUser: User;
   returnUrl = '/stations'
   stationForm: FormGroup;
   all_cities = [];
   all_states = [];
-  form_errors = {};
+  form_errors :any;
   constructor(
     private router: Router,
     private formBuilder: FormBuilder,
@@ -34,26 +34,26 @@ export class ManageStationsComponent implements OnInit {
       this.loadCities();
       this.loadStates();
       this.stationForm = this.formBuilder.group({
-        "name": "",
-        "pcb": "",
-        "prefix": "",
-        "version": "",
-        "address": "",
-        "zipcode": "",
-        "longitude": "",
-        "latitude": "",
-        "state": "",
-        "city": "",
-        "country": "",
-        "user_email": "",
-        "user_ph": "",
-        "seasonal_offline": "",
-        "site_status": "",
-        "monitoring_type": "",
-        "process_attached": "",
-        "ganga_basin": "",
-        "approval_date": "",
-        "camera": ""
+        name: ['', Validators.required],
+        pcb: ['', Validators.required],
+        prefix: ['', Validators.required],
+        version: ['', Validators.required],
+        address: ['', Validators.required],
+        zipcode: ['', Validators.required],
+        longitude: ['', Validators.required],
+        latitude: ['', Validators.required],
+        state: ['', Validators.required],
+        city: ['', Validators.required],
+        country: ['', Validators.required],
+        user_email: ['', Validators.required],
+        user_ph: ['', Validators.required],
+        seasonal_offline: ['', Validators.required],
+        site_status: ['', Validators.required],
+        monitoring_type: ['', Validators.required],
+        process_attached: ['', Validators.required],
+        ganga_basin: ['', Validators.required],
+        approval_date: ['', Validators.required],
+        camera: ['', Validators.required],
       })
     }
     else{

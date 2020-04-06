@@ -3,12 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { User } from '../_models';
+import { User, Registration } from '../_models';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
+  public RegistarableUser: Observable<User>;
 
   constructor(private http: HttpClient) {
     this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
@@ -26,6 +27,14 @@ export class AuthenticationService {
         localStorage.setItem('currentUser', JSON.stringify(user));
         this.currentUserSubject.next(user);
         return user;
+      }));
+  }
+
+  register(email, fname, lname, phone, industry, query) {
+    return this.http.post<any>('http://ec2-3-6-144-180.ap-south-1.compute.amazonaws.com/signup/', { email, fname, lname, phone, industry, query })
+      .pipe(map(RegistarableUser => {
+        console.log(JSON.stringify(RegistarableUser))
+        // store user details and jwt token in local storage to keep user logged in between page refreshes
       }));
   }
 

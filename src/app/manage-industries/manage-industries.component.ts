@@ -19,7 +19,7 @@ export class ManageIndustriesComponent implements OnInit {
   all_states = [];
   all_users = [];
   all_categories = [];
-  form_errors :any;
+  form_errors = {};
   constructor(
     private router: Router,
     private formBuilder: FormBuilder,

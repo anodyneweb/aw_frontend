@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { User, Station } from '../_models';
-import { AuthenticationService, AlertService, MiscellaneousService, StationsService  } from '../_services';
+import { AuthenticationService, AlertService, MiscellaneousService, StationsService, IndustriesService  } from '../_services';
 
 @Component({
   selector: 'app-manage-stations',
@@ -17,7 +17,11 @@ export class ManageStationsComponent implements OnInit {
   stationForm: FormGroup;
   all_cities = [];
   all_states = [];
-  form_errors :any;
+  all_mtypes = ['Effluent', 'Emission', 'CAAQMS']
+  all_industries = [];
+  all_processes_attached = ['Inlet', 'Outlet']
+  all_pcbs = ['MPCCB']
+  form_errors = {};
   constructor(
     private router: Router,
     private formBuilder: FormBuilder,
@@ -25,6 +29,7 @@ export class ManageStationsComponent implements OnInit {
     private miscellaneousService: MiscellaneousService,
     private alertService: AlertService,
     private stationsService: StationsService,
+    private industriesService: IndustriesService
   ) { 
     this.currentUser = this.authenticationService.currentUserValue;
   }
@@ -33,6 +38,7 @@ export class ManageStationsComponent implements OnInit {
     if (this.currentUser){
       this.loadCities();
       this.loadStates();
+      this.loadIndustries();
       this.stationForm = this.formBuilder.group({
         name: ['', Validators.required],
         pcb: ['', Validators.required],
@@ -51,6 +57,7 @@ export class ManageStationsComponent implements OnInit {
         site_status: ['', Validators.required],
         monitoring_type: ['', Validators.required],
         process_attached: ['', Validators.required],
+        industry: ['', Validators.required],
         ganga_basin: ['', Validators.required],
         approval_date: ['', Validators.required],
         camera: ['', Validators.required],
@@ -82,6 +89,19 @@ export class ManageStationsComponent implements OnInit {
       .subscribe(
         data => {
           this.all_states = data['results'];
+        },
+        error => {
+          this.alertService.error(error);
+        });
+  }
+
+  loadIndustries() {
+    this.alertService.clear();
+    this.industriesService.getAll()
+      .pipe(first())
+      .subscribe(
+        data => {
+          this.all_industries = data['results'];
         },
         error => {
           this.alertService.error(error);

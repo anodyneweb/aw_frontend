@@ -86,7 +86,7 @@ import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 export class StationComponent implements OnInit {
 
   currentUser:User;
-  returnUrl = '/'
+  returnUrl = '/stations'
   displayedColumns: string[] = [
     // 'uuid',
     // 'industry',
@@ -118,6 +118,7 @@ export class StationComponent implements OnInit {
     // 'is_allowed',
     'created',
     'camera',
+    'uuid'
     // 'calibration' 
   ];
   dataSource = new MatTableDataSource();
@@ -156,6 +157,21 @@ export class StationComponent implements OnInit {
           this.dataSource = data['results'];
           this.resultsLength = data['count'];
           // this.router.navigate([this.returnUrl]);
+        },
+        error => {
+          this.alertService.error(error);
+        });
+  }
+
+  removeStation(station_id) {
+    this.alertService.clear();
+    this.StationService.deleteStation(station_id)
+      .pipe(first())
+      .subscribe(
+        data => {
+          this.router.navigate([this.returnUrl]);
+          // this.dataSource = data['results'];
+          // this.resultsLength = data['count'];
         },
         error => {
           this.alertService.error(error);

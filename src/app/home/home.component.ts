@@ -13,8 +13,8 @@ import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 
 export class HomeComponent implements OnInit {
   currentUser:User;
-  returnUrl = '/'
-  displayedColumns: string[] = ['name', 'dir', 'industry_code', 'status', 'type', 'industry_id', 'address', 'zipcode', 'state', 'city', 'country', 'created'];
+  returnUrl = '/dashboard'
+  displayedColumns: string[] = ['name', 'dir', 'industry_code', 'status', 'type', 'industry_id', 'address', 'zipcode', 'state', 'city', 'country', 'created', 'uuid'];
   dataSource = new MatTableDataSource();
   resultsLength = 0;
 
@@ -48,6 +48,21 @@ export class HomeComponent implements OnInit {
         data => {
           this.dataSource = data['results'];
           this.resultsLength = data['count'];
+        },
+        error => {
+          this.alertService.error(error);
+        });
+  }
+
+  removeIndustry(industry_id) {
+    this.alertService.clear();
+    this.IndustriesService.deleteIndustry(industry_id)
+      .pipe(first())
+      .subscribe(
+        data => {
+          this.router.navigate([this.returnUrl]);
+          // this.dataSource = data['results'];
+          // this.resultsLength = data['count'];
         },
         error => {
           this.alertService.error(error);

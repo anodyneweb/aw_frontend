@@ -25,4 +25,8 @@ export class StationsService {
     return this.http.post<Station>('http://ec2-3-6-144-180.ap-south-1.compute.amazonaws.com/api/station/',station_body.value, {headers: this.httpHeaderOptions});
   }
 
+  deleteStation(station_id){
+    return this.http.delete<Station>('http://ec2-3-6-144-180.ap-south-1.compute.amazonaws.com/api/station/'+ station_id, {headers: this.httpHeaderOptions});
+  }
+
 }

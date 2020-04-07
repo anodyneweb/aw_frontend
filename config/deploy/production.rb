@@ -67,4 +67,5 @@
 set :application, 'anodyne-frontend'
 set :branch, 'master'
 set :deploy_to, "/home/ubuntu/apps/#{fetch(:application)}"
-server '35.154.240.85', user: 'ubuntu', roles: %w{web app db}
+#server '35.154.240.85', user: 'ubuntu', roles: %w{web app db}
+server '35.154.178.32', user: 'ubuntu', roles: %w{web app db}

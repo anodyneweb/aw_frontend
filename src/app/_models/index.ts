@@ -4,3 +4,4 @@ export * from './industry';
 export * from './station';
 export * from './state';
 export * from './city';
+export * from './alert';

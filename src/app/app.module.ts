@@ -43,6 +43,7 @@ import { UserComponent } from './user/user.component';
 import { ManageIndustriesComponent } from './manage-industries/manage-industries.component';
 import { ManageStationsComponent } from './manage-stations/manage-stations.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { AlertComponent } from './_alert/alert/alert.component';
 
 
 
@@ -55,7 +56,8 @@ import { RegistrationComponent } from './registration/registration.component';
     UserComponent,
     ManageIndustriesComponent,
     ManageStationsComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,

@@ -11,6 +11,10 @@ import { AlertService, IndustriesService, AuthenticationService, UserService, Mi
   styleUrls: ['./manage-industries.component.scss']
 })
 export class ManageIndustriesComponent implements OnInit {
+  alert_options = {
+    autoClose: true,
+    keepAfterRouteChange: false
+  };
   loading = false;
   currentUser: User;
   returnUrl = '/dashboard'
@@ -19,7 +23,7 @@ export class ManageIndustriesComponent implements OnInit {
   all_states = [];
   all_users = [];
   all_categories = [];
-  form_errors = {};
+  form_errors: any = {};
   constructor(
     private router: Router,
     private formBuilder: FormBuilder,
@@ -114,12 +118,12 @@ export class ManageIndustriesComponent implements OnInit {
       .pipe(first())
       .subscribe(
         (data: any) => {
-          this.alertService.error('Industry created successfully');
           this.router.navigate([this.returnUrl]);
+          this.alertService.success('Industry created successfully', this.alert_options);
         },
         error => {
           this.form_errors = error.error
-          this.alertService.error(error.error.messages[0].message);
+          this.alertService.error(error.error.messages[0].message, this.alert_options);
         });
   }
 

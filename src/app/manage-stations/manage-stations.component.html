@@ -14,18 +14,13 @@
               </div>
            </td>
            <td>
-             <div class="form-group">
-                <label for="pcb">Pcb</label>
-                <!-- <mat-form-field>
-                  <input matInput id="pcb" type="text" formControlName="pcb" class="form-control" required>
-                </mat-form-field> -->
-                <mat-select formControlName="pcb">
-                  <mat-option *ngFor="let pcb of all_pcbs" [value]="pcb">
-                    {{pcb}}
-                  </mat-option>
-                </mat-select>
-                <span class="mat-error form-error" *ngIf="form_errors.hasOwnProperty('pcb')">{{form_errors.pcb[0]}}</span>
-             </div>
+            <div class="form-group">
+              <label for="site_status">Site Status</label>
+              <mat-form-field>
+                <input matInput id="site_status" type="text" formControlName="site_status" class="form-control" required>
+              </mat-form-field>
+              <span class="mat-error form-error" *ngIf="form_errors.hasOwnProperty('site_status')">{{form_errors.site_status[0]}}</span>
+            </div>
             </td>
           </tr>
           <tr>
@@ -155,14 +150,21 @@
           <tr>
             <td>
               <div class="form-group">
-                <label for="site_status">Site Status</label>
-                <mat-form-field>
-                  <input matInput id="site_status" type="text" formControlName="site_status" class="form-control" required>
-                </mat-form-field>
-                <span class="mat-error form-error" *ngIf="form_errors.hasOwnProperty('site_status')">{{form_errors.site_status[0]}}</span>
-              </div>
+                <label for="pcb">Pcb</label>
+                <!-- <mat-form-field>
+                  <input matInput id="pcb" type="text" formControlName="pcb" class="form-control" required>
+                </mat-form-field> -->
+                <mat-select formControlName="pcb">
+                  <mat-option *ngFor="let pcb of all_pcbs" [value]="pcb">
+                    {{pcb}}
+                  </mat-option>
+                </mat-select>
+                <span class="mat-error form-error" *ngIf="form_errors.hasOwnProperty('pcb')">{{form_errors.pcb[0]}}</span>
+             </div>
+              
             </td>
             <td>
+              
               <div class="form-group">
                 <label for="monitoring_type">Monitoring Type</label>
                 <!-- <mat-form-field>
@@ -194,11 +196,13 @@
             </td>
             <td>
               <div class="form-group">
-                <label for="ganga_basin">Ganga Basin</label>
-                <mat-form-field>
-                  <input matInput id="ganga_basin" type="text" formControlName="ganga_basin" class="form-control" required>
-                </mat-form-field>
-                <span class="mat-error form-error" *ngIf="form_errors.hasOwnProperty('ganga_basin')">{{form_errors.ganga_basin[0]}}</span>
+                <label for="address">Industry</label>
+                <mat-select formControlName="industry">
+                  <mat-option *ngFor="let industry of all_industries" [value]="industry.uuid">
+                    {{industry.name}}
+                  </mat-option>
+                </mat-select>
+                <span class="mat-error form-error" *ngIf="form_errors.hasOwnProperty('state')">{{form_errors.state[0]}}</span>
               </div>
             </td>
           </tr>
@@ -225,14 +229,13 @@
           <tr>
             <td>
               <div class="form-group">
-                <label for="address">Industry</label>
-                <mat-select formControlName="industry">
-                  <mat-option *ngFor="let industry of all_industries" [value]="industry.uuid">
-                    {{industry.name}}
-                  </mat-option>
-                </mat-select>
-                <span class="mat-error form-error" *ngIf="form_errors.hasOwnProperty('state')">{{form_errors.state[0]}}</span>
+                <label for="ganga_basin">Ganga Basin</label>
+                <mat-form-field>
+                  <input matInput id="ganga_basin" type="text" formControlName="ganga_basin" class="form-control" required>
+                </mat-form-field>
+                <span class="mat-error form-error" *ngIf="form_errors.hasOwnProperty('ganga_basin')">{{form_errors.ganga_basin[0]}}</span>
               </div>
+              
             </td>
           </tr>
           <button mat-button [disabled]="loading" class="btn btn-primary">

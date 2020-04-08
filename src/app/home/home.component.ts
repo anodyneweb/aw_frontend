@@ -12,6 +12,10 @@ import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 })
 
 export class HomeComponent implements OnInit {
+  alert_options = {
+    autoClose: true,
+    keepAfterRouteChange: false
+  };
   currentUser:User;
   returnUrl = '/dashboard'
   displayedColumns: string[] = ['name', 'dir', 'industry_code', 'status', 'type', 'industry_id', 'address', 'zipcode', 'state', 'city', 'country', 'created', 'uuid'];
@@ -50,7 +54,7 @@ export class HomeComponent implements OnInit {
           this.resultsLength = data['count'];
         },
         error => {
-          this.alertService.error(error);
+          this.alertService.error('Failed');
         });
   }
 
@@ -60,27 +64,12 @@ export class HomeComponent implements OnInit {
       .pipe(first())
       .subscribe(
         data => {
-          this.router.navigate([this.returnUrl]);
-          // this.dataSource = data['results'];
-          // this.resultsLength = data['count'];
+          this.loadIndustriesInfo();
+          this.alertService.success('Industry deleted successfully', this.alert_options);
         },
         error => {
-          this.alertService.error(error);
+          this.alertService.error('Delete failed', this.alert_options);
         });
   }
 
 }
-// export interface IndustryElement {
-//   name: string;
-//   dir: string;
-//   industry_code: string;
-//   status: string;
-//   type: string,
-//   industry_id: string,
-//   address: string,
-//   zipcode: string,
-//   state: string,
-//   city: string,
-//   country: string, 
-//   created: string
-// }

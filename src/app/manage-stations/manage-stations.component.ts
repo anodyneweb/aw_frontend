@@ -11,6 +11,10 @@ import { AuthenticationService, AlertService, MiscellaneousService, StationsServ
   styleUrls: ['./manage-stations.component.scss']
 })
 export class ManageStationsComponent implements OnInit {
+  alert_options = {
+    autoClose: true,
+    keepAfterRouteChange: false
+  };
   loading = false;
   currentUser: User;
   returnUrl = '/stations'
@@ -21,7 +25,7 @@ export class ManageStationsComponent implements OnInit {
   all_industries = [];
   all_processes_attached = ['Inlet', 'Outlet']
   all_pcbs = ['MPCCB']
-  form_errors = {};
+  form_errors: any = {};
   constructor(
     private router: Router,
     private formBuilder: FormBuilder,
@@ -41,7 +45,6 @@ export class ManageStationsComponent implements OnInit {
       this.loadIndustries();
       this.stationForm = this.formBuilder.group({
         name: ['', Validators.required],
-        pcb: ['', Validators.required],
         prefix: ['', Validators.required],
         version: ['', Validators.required],
         address: ['', Validators.required],
@@ -55,6 +58,7 @@ export class ManageStationsComponent implements OnInit {
         user_ph: ['', Validators.required],
         seasonal_offline: ['', Validators.required],
         site_status: ['', Validators.required],
+        pcb: ['', Validators.required],
         monitoring_type: ['', Validators.required],
         process_attached: ['', Validators.required],
         industry: ['', Validators.required],
@@ -114,12 +118,12 @@ export class ManageStationsComponent implements OnInit {
       .pipe(first())
       .subscribe(
         data => {
-          this.alertService.error('Station created successfully');
+          this.alertService.error('Station created successfully', this.alert_options);
           this.router.navigate([this.returnUrl]);
         },
         error => {
           this.form_errors = error.error
-          this.alertService.error(error.error.messages[0].message);
+          this.alertService.error(error.error.messages[0].message, this.alert_options);
         });
   }
 

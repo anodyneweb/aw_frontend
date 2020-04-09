@@ -92,7 +92,8 @@ export class StationComponent implements OnInit {
           this.resultsLength = data['count'];
         },
         error => {
-          this.alertService.error(error);
+          //this.alertService.error(error);
+          this.alertService.error('Session expired');
         });
   }
 

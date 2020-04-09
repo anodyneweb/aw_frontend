@@ -54,7 +54,7 @@ export class HomeComponent implements OnInit {
           this.resultsLength = data['count'];
         },
         error => {
-          this.alertService.error('Failed');
+          this.alertService.error('Session expired');
         });
   }
 

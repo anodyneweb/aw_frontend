@@ -5313,3 +5313,733 @@ npm WARN enoent SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory,
   INFO [ca469fd1] Running /usr/bin/env echo "Branch master (at 1d879d71d667e82731596fa44ead13ad6cc61f1c) deployed as release 20200407040854 by lvi-25" >> /home/ubuntu/apps/anodyne-frontend/revisions.log as ubuntu@35.154.178.32
  DEBUG [ca469fd1] Command: cd /home/ubuntu/apps/anodyne-frontend/releases && /usr/bin/env echo "Branch master (at 1d879d71d667e82731596fa44ead13ad6cc61f1c) deployed as release 20200407040854 by lvi-25" >> /home/ubuntu/apps/anodyne-frontend/revisions.log
   INFO [ca469fd1] Finished in 0.092 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-04-09 07:11:03 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [2df4bd4e] Running /usr/bin/env mkdir -p /tmp as ubuntu@35.154.178.32
+ DEBUG [2df4bd4e] Command: /usr/bin/env mkdir -p /tmp
+  INFO [2df4bd4e] Finished in 1.682 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-anodyne-frontend-production-lvi-25.sh 0.0%
+  INFO Uploading /tmp/git-ssh-anodyne-frontend-production-lvi-25.sh 100.0%
+  INFO [f6b17684] Running /usr/bin/env chmod 700 /tmp/git-ssh-anodyne-frontend-production-lvi-25.sh as ubuntu@35.154.178.32
+ DEBUG [f6b17684] Command: /usr/bin/env chmod 700 /tmp/git-ssh-anodyne-frontend-production-lvi-25.sh
+  INFO [f6b17684] Finished in 0.090 seconds with exit status 0 (successful).
+  INFO [8fbebb43] Running /usr/bin/env git ls-remote git@github.com:anodyneweb/aw_frontend.git HEAD as ubuntu@35.154.178.32
+ DEBUG [8fbebb43] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-anodyne-frontend-production-lvi-25.sh" ; /usr/bin/env git ls-remote git@github.com:anodyneweb/aw_frontend.git HEAD )
+ DEBUG [8fbebb43] 	8553b7df9690adcf45e59a23d1bf21cc9e7b9615	HEAD
+  INFO [8fbebb43] Finished in 2.498 seconds with exit status 0 (successful).
+  INFO [fe8c80bf] Running /usr/bin/env mkdir -p /home/ubuntu/apps/anodyne-frontend/shared /home/ubuntu/apps/anodyne-frontend/releases as ubuntu@35.154.178.32
+ DEBUG [fe8c80bf] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/anodyne-frontend/shared /home/ubuntu/apps/anodyne-frontend/releases
+  INFO [fe8c80bf] Finished in 0.049 seconds with exit status 0 (successful).
+  INFO [732f3c0f] Running /usr/bin/env mkdir -p /home/ubuntu/apps/anodyne-frontend/shared/node_modules as ubuntu@35.154.178.32
+ DEBUG [732f3c0f] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/anodyne-frontend/shared/node_modules
+  INFO [732f3c0f] Finished in 0.092 seconds with exit status 0 (successful).
+ DEBUG [2208ac94] Running [ -f /home/ubuntu/apps/anodyne-frontend/current/REVISION ] as ubuntu@35.154.178.32
+ DEBUG [2208ac94] Command: [ -f /home/ubuntu/apps/anodyne-frontend/current/REVISION ]
+ DEBUG [2208ac94] Finished in 0.090 seconds with exit status 0 (successful).
+ DEBUG [cc711f8e] Running /usr/bin/env cat /home/ubuntu/apps/anodyne-frontend/current/REVISION 2>/dev/null as ubuntu@35.154.178.32
+ DEBUG [cc711f8e] Command: /usr/bin/env cat /home/ubuntu/apps/anodyne-frontend/current/REVISION 2>/dev/null
+ DEBUG [cc711f8e] 	1d879d71d667e82731596fa44ead13ad6cc61f1c
+ DEBUG [cc711f8e] Finished in 0.094 seconds with exit status 0 (successful).
+ DEBUG [37f36234] Running [ -f /home/ubuntu/apps/anodyne-frontend/repo/HEAD ] as ubuntu@35.154.178.32
+ DEBUG [37f36234] Command: [ -f /home/ubuntu/apps/anodyne-frontend/repo/HEAD ]
+ DEBUG [37f36234] Finished in 0.089 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/ubuntu/apps/anodyne-frontend/repo
+ DEBUG [e5d29b93] Running if test ! -d /home/ubuntu/apps/anodyne-frontend/repo; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/repo'" 1>&2; false; fi as ubuntu@35.154.178.32
+ DEBUG [e5d29b93] Command: if test ! -d /home/ubuntu/apps/anodyne-frontend/repo; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/repo'" 1>&2; false; fi
+ DEBUG [e5d29b93] Finished in 0.088 seconds with exit status 0 (successful).
+  INFO [31ea4a84] Running /usr/bin/env git remote set-url origin git@github.com:anodyneweb/aw_frontend.git as ubuntu@35.154.178.32
+ DEBUG [31ea4a84] Command: cd /home/ubuntu/apps/anodyne-frontend/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-anodyne-frontend-production-lvi-25.sh" ; /usr/bin/env git remote set-url origin git@github.com:anodyneweb/aw_frontend.git )
+  INFO [31ea4a84] Finished in 0.099 seconds with exit status 0 (successful).
+  INFO [4eea330e] Running /usr/bin/env git remote update --prune as ubuntu@35.154.178.32
+ DEBUG [4eea330e] Command: cd /home/ubuntu/apps/anodyne-frontend/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-anodyne-frontend-production-lvi-25.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [4eea330e] 	Fetching origin
+ DEBUG [4eea330e] 	From github.com:anodyneweb/aw_frontend
+   1d879d7..8553b7d  master            -> master
+ + 255238e...d827279 refs/pull/1/merge -> refs/pull/1/merge  (forced update)
+  INFO [4eea330e] Finished in 3.308 seconds with exit status 0 (successful).
+ DEBUG [6c2e1e23] Running if test ! -d /home/ubuntu/apps/anodyne-frontend/repo; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/repo'" 1>&2; false; fi as ubuntu@35.154.178.32
+ DEBUG [6c2e1e23] Command: if test ! -d /home/ubuntu/apps/anodyne-frontend/repo; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/repo'" 1>&2; false; fi
+ DEBUG [6c2e1e23] Finished in 0.091 seconds with exit status 0 (successful).
+  INFO [670a90fa] Running /usr/bin/env mkdir -p /home/ubuntu/apps/anodyne-frontend/releases/20200409014108 as ubuntu@35.154.178.32
+ DEBUG [670a90fa] Command: cd /home/ubuntu/apps/anodyne-frontend/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-anodyne-frontend-production-lvi-25.sh" ; /usr/bin/env mkdir -p /home/ubuntu/apps/anodyne-frontend/releases/20200409014108 )
+  INFO [670a90fa] Finished in 0.090 seconds with exit status 0 (successful).
+  INFO [2b901b8b] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/ubuntu/apps/anodyne-frontend/releases/20200409014108 as ubuntu@35.154.178.32
+ DEBUG [2b901b8b] Command: cd /home/ubuntu/apps/anodyne-frontend/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-anodyne-frontend-production-lvi-25.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/ubuntu/apps/anodyne-frontend/releases/20200409014108 )
+  INFO [2b901b8b] Finished in 0.124 seconds with exit status 0 (successful).
+ DEBUG [2a9fd275] Running if test ! -d /home/ubuntu/apps/anodyne-frontend/repo; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/repo'" 1>&2; false; fi as ubuntu@35.154.178.32
+ DEBUG [2a9fd275] Command: if test ! -d /home/ubuntu/apps/anodyne-frontend/repo; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/repo'" 1>&2; false; fi
+ DEBUG [2a9fd275] Finished in 0.089 seconds with exit status 0 (successful).
+ DEBUG [d9b80671] Running /usr/bin/env git rev-list --max-count=1 master as ubuntu@35.154.178.32
+ DEBUG [d9b80671] Command: cd /home/ubuntu/apps/anodyne-frontend/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-anodyne-frontend-production-lvi-25.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [d9b80671] 	8553b7df9690adcf45e59a23d1bf21cc9e7b9615
+ DEBUG [d9b80671] Finished in 0.094 seconds with exit status 0 (successful).
+ DEBUG [4489c1ea] Running if test ! -d /home/ubuntu/apps/anodyne-frontend/releases/20200409014108; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/releases/20200409014108'" 1>&2; false; fi as ubuntu@35.154.178.32
+ DEBUG [4489c1ea] Command: if test ! -d /home/ubuntu/apps/anodyne-frontend/releases/20200409014108; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/releases/20200409014108'" 1>&2; false; fi
+ DEBUG [4489c1ea] Finished in 0.089 seconds with exit status 0 (successful).
+  INFO [8493a74d] Running /usr/bin/env echo "8553b7df9690adcf45e59a23d1bf21cc9e7b9615" > REVISION as ubuntu@35.154.178.32
+ DEBUG [8493a74d] Command: cd /home/ubuntu/apps/anodyne-frontend/releases/20200409014108 && /usr/bin/env echo "8553b7df9690adcf45e59a23d1bf21cc9e7b9615" > REVISION
+  INFO [8493a74d] Finished in 0.090 seconds with exit status 0 (successful).
+  INFO [f6c5aa69] Running /usr/bin/env mkdir -p /home/ubuntu/apps/anodyne-frontend/releases/20200409014108 as ubuntu@35.154.178.32
+ DEBUG [f6c5aa69] Command: /usr/bin/env mkdir -p /home/ubuntu/apps/anodyne-frontend/releases/20200409014108
+  INFO [f6c5aa69] Finished in 0.090 seconds with exit status 0 (successful).
+ DEBUG [c983c32c] Running [ -L /home/ubuntu/apps/anodyne-frontend/releases/20200409014108/node_modules ] as ubuntu@35.154.178.32
+ DEBUG [c983c32c] Command: [ -L /home/ubuntu/apps/anodyne-frontend/releases/20200409014108/node_modules ]
+ DEBUG [c983c32c] Finished in 0.089 seconds with exit status 1 (failed).
+ DEBUG [218a4f2d] Running [ -d /home/ubuntu/apps/anodyne-frontend/releases/20200409014108/node_modules ] as ubuntu@35.154.178.32
+ DEBUG [218a4f2d] Command: [ -d /home/ubuntu/apps/anodyne-frontend/releases/20200409014108/node_modules ]
+ DEBUG [218a4f2d] Finished in 0.088 seconds with exit status 1 (failed).
+  INFO [f6207b21] Running /usr/bin/env ln -s /home/ubuntu/apps/anodyne-frontend/shared/node_modules /home/ubuntu/apps/anodyne-frontend/releases/20200409014108/node_modules as ubuntu@35.154.178.32
+ DEBUG [f6207b21] Command: /usr/bin/env ln -s /home/ubuntu/apps/anodyne-frontend/shared/node_modules /home/ubuntu/apps/anodyne-frontend/releases/20200409014108/node_modules
+  INFO [f6207b21] Finished in 0.089 seconds with exit status 0 (successful).
+  INFO [0ec5abaf] Running /usr/bin/env ln -s /home/ubuntu/apps/anodyne-frontend/releases/20200409014108 /home/ubuntu/apps/anodyne-frontend/releases/current as ubuntu@35.154.178.32
+ DEBUG [0ec5abaf] Command: /usr/bin/env ln -s /home/ubuntu/apps/anodyne-frontend/releases/20200409014108 /home/ubuntu/apps/anodyne-frontend/releases/current
+  INFO [0ec5abaf] Finished in 0.092 seconds with exit status 0 (successful).
+  INFO [4a3076ef] Running /usr/bin/env mv /home/ubuntu/apps/anodyne-frontend/releases/current /home/ubuntu/apps/anodyne-frontend as ubuntu@35.154.178.32
+ DEBUG [4a3076ef] Command: /usr/bin/env mv /home/ubuntu/apps/anodyne-frontend/releases/current /home/ubuntu/apps/anodyne-frontend
+  INFO [4a3076ef] Finished in 0.091 seconds with exit status 0 (successful).
+ DEBUG [2b166661] Running if test ! -d /home/ubuntu/apps/anodyne-frontend/releases/20200409014108; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/releases/20200409014108'" 1>&2; false; fi as ubuntu@35.154.178.32
+ DEBUG [2b166661] Command: if test ! -d /home/ubuntu/apps/anodyne-frontend/releases/20200409014108; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/releases/20200409014108'" 1>&2; false; fi
+ DEBUG [2b166661] Finished in 0.090 seconds with exit status 0 (successful).
+ DEBUG [6262dca2] Running [ -d /home/ubuntu/apps/anodyne-frontend/current/node_modules ] as ubuntu@35.154.178.32
+ DEBUG [6262dca2] Command: [ -d /home/ubuntu/apps/anodyne-frontend/current/node_modules ]
+ DEBUG [6262dca2] Finished in 0.088 seconds with exit status 0 (successful).
+  INFO [cdbed167] Running /usr/bin/env npm install as ubuntu@35.154.178.32
+ DEBUG [cdbed167] Command: cd /home/ubuntu/apps/anodyne-frontend/releases/20200409014108 && /usr/bin/env npm install
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	deprecated
+ DEBUG [cdbed167] 	 core-js@2.6.11: core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	deprecated
+ DEBUG [cdbed167] 	 request@2.88.2: request has been deprecated, see https://github.com/request/request/issues/3142
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	optional
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: fsevents@^1.2.7 (node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/chokidar/node_modules/fsevents):
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	notsup
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.12: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	optional
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: fsevents@^1.2.7 (node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/chokidar/node_modules/fsevents):
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	notsup
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.12: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 @ngtools/webpack@8.3.21 requires a peer of @angular/compiler-cli@^8.0.0 but none is installed. You must install peer dependencies yourself.
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 tsutils@2.29.0 requires a peer of typescript@>=2.1.0 || >=2.1.0-dev || >=2.2.0-dev || >=2.3.0-dev || >=2.4.0-dev || >=2.5.0-dev || >=2.6.0-dev || >=2.7.0-dev || >=2.8.0-dev || >=2.9.0-dev || >= 3.0.0-dev || >= 3.1.0-dev but none is installed. You must install peer dependencies yourself.
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	optional
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: abbrev@1.1.1 (node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/abbrev):
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	enoent
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/abbrev' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/.abbrev.DELETE'
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	optional
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: ansi-regex@2.1.1 (node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/ansi-regex):
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	enoent
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/ansi-regex' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/.ansi-regex.DELETE'
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	optional
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: aproba@1.2.0 (node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/aproba):
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	enoent
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/aproba' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/.aproba.DELETE'
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	optional
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: balanced-match@1.0.0 (node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/balanced-match):
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	enoent
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/balanced-match' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/.balanced-match.DELETE'
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	optional
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: chownr@1.1.4 (node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/chownr):
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	enoent
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/chownr' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/.chownr.DELETE'
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	optional
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: code-point-at@1.1.0 (node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/code-point-at):
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	enoent
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/code-point-at' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/.code-point-at.DELETE'
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	optional
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: concat-map@0.0.1 (node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/concat-map):
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	enoent
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/concat-map' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/.concat-map.DELETE'
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	optional
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: console-control-strings@1.1.0 (node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/console-control-strings):
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	enoent
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/console-control-strings' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/.console-control-strings.DELETE'
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	optional
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: core-util-is@1.0.2 (node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/core-util-is):
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	enoent
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/core-util-is' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/.core-util-is.DELETE'
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	optional
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: deep-extend@0.6.0 (node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/deep-extend):
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	enoent
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/deep-extend' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/.deep-extend.DELETE'
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	optional
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: delegates@1.0.0 (node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/delegates):
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	enoent
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/delegates' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/.delegates.DELETE'
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	optional
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: detect-libc@1.0.3 (node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/detect-libc):
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	enoent
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/detect-libc' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/.detect-libc.DELETE'
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	optional
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: fs.realpath@1.0.0 (node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/fs.realpath):
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	enoent
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/fs.realpath' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/.fs.realpath.DELETE'
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	optional
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: has-unicode@2.0.1 (node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/has-unicode):
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	enoent
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/has-unicode' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/.has-unicode.DELETE'
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	optional
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: inherits@2.0.4 (node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/inherits):
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	enoent
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/inherits' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/.inherits.DELETE'
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	optional
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: ini@1.3.5 (node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/ini):
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	enoent
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/ini' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/.ini.DELETE'
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	optional
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: isarray@1.0.0 (node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/isarray):
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	enoent
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/isarray' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/.isarray.DELETE'
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	optional
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: minimist@1.2.5 (node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/minimist):
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	enoent
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/minimist' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/.minimist.DELETE'
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	optional
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: ms@2.1.2 (node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/ms):
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	enoent
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/ms' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/.ms.DELETE'
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	optional
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: npm-normalize-package-bin@1.0.1 (node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/npm-normalize-package-bin):
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	enoent
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/npm-normalize-package-bin' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/.npm-normalize-package-bin.DELETE'
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	optional
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: number-is-nan@1.0.1 (node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/number-is-nan):
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	enoent
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/number-is-nan' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/.number-is-nan.DELETE'
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	optional
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: object-assign@4.1.1 (node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/object-assign):
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	enoent
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/object-assign' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/.object-assign.DELETE'
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	optional
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: os-homedir@1.0.2 (node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/os-homedir):
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	enoent
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/os-homedir' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/.os-homedir.DELETE'
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	optional
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: os-tmpdir@1.0.2 (node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/os-tmpdir):
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	enoent
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/os-tmpdir' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/.os-tmpdir.DELETE'
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	optional
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: path-is-absolute@1.0.1 (node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/path-is-absolute):
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	enoent
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/path-is-absolute' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/.path-is-absolute.DELETE'
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	optional
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: process-nextick-args@2.0.1 (node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/process-nextick-args):
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	enoent
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/process-nextick-args' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/.process-nextick-args.DELETE'
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	optional
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: safe-buffer@5.1.2 (node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/safe-buffer):
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	enoent
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/safe-buffer' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/.safe-buffer.DELETE'
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	optional
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: safer-buffer@2.1.2 (node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/safer-buffer):
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	enoent
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/safer-buffer' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/.safer-buffer.DELETE'
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	optional
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: sax@1.2.4 (node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/sax):
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	enoent
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/sax' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/.sax.DELETE'
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	optional
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: semver@5.7.1 (node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/semver):
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	enoent
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/semver' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/.semver.DELETE'
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	optional
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: set-blocking@2.0.0 (node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/set-blocking):
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	enoent
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/set-blocking' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/.set-blocking.DELETE'
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	optional
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: signal-exit@3.0.2 (node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/signal-exit):
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	enoent
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/signal-exit' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/.signal-exit.DELETE'
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	optional
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: strip-json-comments@2.0.1 (node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/strip-json-comments):
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	enoent
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/strip-json-comments' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/.strip-json-comments.DELETE'
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	optional
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: util-deprecate@1.0.2 (node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/util-deprecate):
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	enoent
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/util-deprecate' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/.util-deprecate.DELETE'
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	optional
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: wrappy@1.0.2 (node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/wrappy):
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	enoent
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/wrappy' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/.wrappy.DELETE'
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	optional
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: yallist@3.1.1 (node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/yallist):
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	enoent
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/yallist' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/watchpack/node_modules/fsevents/node_modules/.yallist.DELETE'
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	optional
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: abbrev@1.1.1 (node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/abbrev):
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	enoent
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/abbrev' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/.abbrev.DELETE'
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	optional
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: ansi-regex@2.1.1 (node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/ansi-regex):
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	enoent
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/ansi-regex' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/.ansi-regex.DELETE'
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	optional
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: aproba@1.2.0 (node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/aproba):
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	enoent
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/aproba' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/.aproba.DELETE'
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	optional
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: balanced-match@1.0.0 (node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/balanced-match):
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	enoent
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/balanced-match' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/.balanced-match.DELETE'
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	optional
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: chownr@1.1.4 (node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/chownr):
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	WARN
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	enoent
+ DEBUG [cdbed167] 	 SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/chownr' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/.chownr.DELETE'
+ DEBUG [cdbed167] 	npm
+ DEBUG [cdbed167] 	 
+ DEBUG [cdbed167] 	updated 17 packages and audited 19164 packages in 30.351s
+ DEBUG [cdbed167] 	WARN optional SKIPPING OPTIONAL DEPENDENCY: code-point-at@1.1.0 (node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/code-point-at):
+npm WARN enoent SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/code-point-at' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/.code-point-at.DELETE'
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: concat-map@0.0.1 (node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/concat-map):
+npm WARN enoent SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/concat-map' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/.concat-map.DELETE'
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: console-control-strings@1.1.0 (node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/console-control-strings):
+npm WARN enoent SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/console-control-strings' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/.console-control-strings.DELETE'
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: core-util-is@1.0.2 (node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/core-util-is):
+npm WARN enoent SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/core-util-is' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/.core-util-is.DELETE'
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: deep-extend@0.6.0 (node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/deep-extend):
+npm WARN enoent SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/deep-extend' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/.deep-extend.DELETE'
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: delegates@1.0.0 (node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/delegates):
+npm WARN enoent SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/delegates' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/.delegates.DELETE'
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: detect-libc@1.0.3 (node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/detect-libc):
+npm WARN enoent SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/detect-libc' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/.detect-libc.DELETE'
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fs.realpath@1.0.0 (node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/fs.realpath):
+npm WARN enoent SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/fs.realpath' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/.fs.realpath.DELETE'
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: has-unicode@2.0.1 (node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/has-unicode):
+npm WARN enoent SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/has-unicode' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/.has-unicode.DELETE'
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: inherits@2.0.4 (node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/inherits):
+npm WARN enoent SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/inherits' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/.inherits.DELETE'
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: ini@1.3.5 (node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/ini):
+npm WARN enoent SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/ini' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/.ini.DELETE'
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: isarray@1.0.0 (node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/isarray):
+npm WARN enoent SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/isarray' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/.isarray.DELETE'
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: minimist@1.2.5 (node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/minimist):
+npm WARN enoent SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/minimist' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/.minimist.DELETE'
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: ms@2.1.2 (node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/ms):
+npm WARN enoent SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/ms' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/.ms.DELETE'
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: npm-normalize-package-bin@1.0.1 (node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/npm-normalize-package-bin):
+npm WARN enoent SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/npm-normalize-package-bin' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/.npm-normalize-package-bin.DELETE'
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: number-is-nan@1.0.1 (node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/number-is-nan):
+npm WARN enoent SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/number-is-nan' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/.number-is-nan.DELETE'
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: object-assign@4.1.1 (node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/object-assign):
+npm WARN enoent SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/object-assign' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/.object-assign.DELETE'
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: os-homedir@1.0.2 (node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/os-homedir):
+npm WARN enoent SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/os-homedir' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/.os-homedir.DELETE'
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: os-tmpdir@1.0.2 (node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/os-tmpdir):
+npm WARN enoent SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/os-tmpdir' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/.os-tmpdir.DELETE'
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: path-is-absolute@1.0.1 (node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/path-is-absolute):
+npm WARN enoent SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/path-is-absolute' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/.path-is-absolute.DELETE'
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: process-nextick-args@2.0.1 (node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/process-nextick-args):
+npm WARN enoent SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/process-nextick-args' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/.process-nextick-args.DELETE'
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: safe-buffer@5.1.2 (node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/safe-buffer):
+npm WARN enoent SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/safe-buffer' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/.safe-buffer.DELETE'
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: safer-buffer@2.1.2 (node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/safer-buffer):
+npm WARN enoent SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/safer-buffer' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/.safer-buffer.DELETE'
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: sax@1.2.4 (node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/sax):
+npm WARN enoent SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/sax' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/.sax.DELETE'
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: semver@5.7.1 (node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/semver):
+npm WARN enoent SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/semver' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/.semver.DELETE'
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: set-blocking@2.0.0 (node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/set-blocking):
+npm WARN enoent SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/set-blocking' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/.set-blocking.DELETE'
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: signal-exit@3.0.2 (node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/signal-exit):
+npm WARN enoe
+ DEBUG [cdbed167] 	nt SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/signal-exit' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/.signal-exit.DELETE'
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: strip-json-comments@2.0.1 (node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/strip-json-comments):
+npm WARN enoent SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/strip-json-comments' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/.strip-json-comments.DELETE'
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: util-deprecate@1.0.2 (node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/util-deprecate):
+npm WARN enoent SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/util-deprecate' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/.util-deprecate.DELETE'
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: wrappy@1.0.2 (node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/wrappy):
+npm WARN enoent SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/wrappy' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/.wrappy.DELETE'
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: yallist@3.1.1 (node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/yallist):
+npm WARN enoent SKIPPING OPTIONAL DEPENDENCY: ENOENT: no such file or directory, rename '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/yallist' -> '/home/ubuntu/apps/anodyne-frontend/shared/node_modules/@angular-devkit/build-angular/node_modules/webpack-dev-server/node_modules/fsevents/node_modules/.yallist.DELETE'
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.1.2 (node_modules/@angular-devkit/build-angular/node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.1.2: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.11 (node_modules/karma/node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.11: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.11 (node_modules/@angular/compiler-cli/node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.11: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+
+ DEBUG [cdbed167] 	found 10 vulnerabilities (8 low, 2 high)
+  run `npm audit fix` to fix them, or `npm audit` for details
+  INFO [cdbed167] Finished in 32.787 seconds with exit status 0 (successful).
+ DEBUG [716a984d] Running if test ! -d /home/ubuntu/apps/anodyne-frontend/releases/20200409014108; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/releases/20200409014108'" 1>&2; false; fi as ubuntu@35.154.178.32
+ DEBUG [716a984d] Command: if test ! -d /home/ubuntu/apps/anodyne-frontend/releases/20200409014108; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/releases/20200409014108'" 1>&2; false; fi
+ DEBUG [716a984d] Finished in 0.068 seconds with exit status 0 (successful).
+ DEBUG [d966239f] Running /usr/bin/env ls -x /home/ubuntu/apps/anodyne-frontend/releases as ubuntu@35.154.178.32
+ DEBUG [d966239f] Command: /usr/bin/env ls -x /home/ubuntu/apps/anodyne-frontend/releases
+ DEBUG [d966239f] 	20200121002237	20200406132440	20200406133440	20200407035237	20200407040854
+20200409014108
+ DEBUG [d966239f] Finished in 0.095 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on 35.154.178.32
+ DEBUG [dc01280c] Running [ -d /home/ubuntu/apps/anodyne-frontend/current ] as ubuntu@35.154.178.32
+ DEBUG [dc01280c] Command: [ -d /home/ubuntu/apps/anodyne-frontend/current ]
+ DEBUG [dc01280c] Finished in 0.088 seconds with exit status 0 (successful).
+ DEBUG [7e058792] Running /usr/bin/env readlink /home/ubuntu/apps/anodyne-frontend/current as ubuntu@35.154.178.32
+ DEBUG [7e058792] Command: /usr/bin/env readlink /home/ubuntu/apps/anodyne-frontend/current
+ DEBUG [7e058792] 	/home/ubuntu/apps/anodyne-frontend/releases/20200409014108
+ DEBUG [7e058792] Finished in 0.094 seconds with exit status 0 (successful).
+  INFO [7bb5b391] Running /usr/bin/env rm -rf /home/ubuntu/apps/anodyne-frontend/releases/20200121002237 as ubuntu@35.154.178.32
+ DEBUG [7bb5b391] Command: /usr/bin/env rm -rf /home/ubuntu/apps/anodyne-frontend/releases/20200121002237
+  INFO [7bb5b391] Finished in 0.106 seconds with exit status 0 (successful).
+ DEBUG [774e1b10] Running if test ! -d /home/ubuntu/apps/anodyne-frontend/releases; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/releases'" 1>&2; false; fi as ubuntu@35.154.178.32
+ DEBUG [774e1b10] Command: if test ! -d /home/ubuntu/apps/anodyne-frontend/releases; then echo "Directory does not exist '/home/ubuntu/apps/anodyne-frontend/releases'" 1>&2; false; fi
+ DEBUG [774e1b10] Finished in 0.091 seconds with exit status 0 (successful).
+  INFO [a691e5d6] Running /usr/bin/env echo "Branch master (at 8553b7df9690adcf45e59a23d1bf21cc9e7b9615) deployed as release 20200409014108 by lvi-25" >> /home/ubuntu/apps/anodyne-frontend/revisions.log as ubuntu@35.154.178.32
+ DEBUG [a691e5d6] Command: cd /home/ubuntu/apps/anodyne-frontend/releases && /usr/bin/env echo "Branch master (at 8553b7df9690adcf45e59a23d1bf21cc9e7b9615) deployed as release 20200409014108 by lvi-25" >> /home/ubuntu/apps/anodyne-frontend/revisions.log
+  INFO [a691e5d6] Finished in 0.090 seconds with exit status 0 (successful).

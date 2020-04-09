@@ -43,8 +43,8 @@ import { UserComponent } from './user/user.component';
 import { ManageIndustriesComponent } from './manage-industries/manage-industries.component';
 import { ManageStationsComponent } from './manage-stations/manage-stations.component';
 import { RegistrationComponent } from './registration/registration.component';
-import { AlertComponent } from './_alert/alert/alert.component';
-
+//import { AlertComponent } from './_alert/alert/alert.component';
+import { AlertModule } from './_alert/alert/alert.module';
 
 
 @NgModule({
@@ -57,7 +57,6 @@ import { AlertComponent } from './_alert/alert/alert.component';
     ManageIndustriesComponent,
     ManageStationsComponent,
     RegistrationComponent,
-    AlertComponent
   ],
   imports: [
     BrowserModule,
@@ -110,6 +109,7 @@ import { AlertComponent } from './_alert/alert/alert.component';
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
+    AlertModule
   ],
   providers: [
     fakeBackendProvider

@@ -23,6 +23,14 @@ export class IndustriesService {
     return this.http.post<Industry>('http://ec2-3-6-144-180.ap-south-1.compute.amazonaws.com/api/industry/',industry_body.value, {headers: this.httpHeaderOptions});
   }
 
+  updateIndustry(industry_id, industry_body) {
+    return this.http.put<Industry>('http://ec2-3-6-144-180.ap-south-1.compute.amazonaws.com/api/industry/' + industry_id + '/', industry_body.value, {headers: this.httpHeaderOptions});
+  }
+
+  getIndustry(industry_id) {
+    return this.http.get<Industry>('http://ec2-3-6-144-180.ap-south-1.compute.amazonaws.com/api/industry/'+ industry_id, {headers: this.httpHeaderOptions});
+  }
+
   deleteIndustry(industry_id){
     return this.http.delete<Industry>('http://ec2-3-6-144-180.ap-south-1.compute.amazonaws.com/api/industry/'+ industry_id, {headers: this.httpHeaderOptions});
   }

@@ -1,7 +1,7 @@
 <mat-card>
-  <mat-card-title>Add Industry</mat-card-title>
-  <mat-card-content>
-    <form [formGroup]="industryForm" (ngSubmit)="createIndustry()">
+  <mat-card-title>{{ isNew ? 'Add Industry' : 'Update Industry' }}</mat-card-title>
+  <mat-card-content *ngIf="showForm">
+    <form [formGroup]="industryForm" (ngSubmit)="saveIndustry()">
       <table>
         <tr>
           <td>
@@ -114,7 +114,7 @@
       </table>
       <button mat-button [disabled]="loading" class="btn btn-primary">
         <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
-        Add Industry
+        {{ isNew ? 'Add Industry' : 'Update Industry' }}
       </button>
     </form>
   </mat-card-content>

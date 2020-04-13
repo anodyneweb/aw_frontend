@@ -72,4 +72,9 @@ export class HomeComponent implements OnInit {
         });
   }
 
+  editIndustry(industry_id) {
+    let editUrl = "/edit/industry/" + industry_id;
+    this.router.navigate([editUrl]);
+  }
+
 }

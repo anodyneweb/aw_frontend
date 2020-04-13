@@ -67,6 +67,9 @@
   <ng-container matColumnDef="uuid">
     <th mat-header-cell *matHeaderCellDef> Actions </th>
     <td mat-cell *matCellDef="let element"> 
+      <a mat-stroked-button (click)="editIndustry(element.uuid)"> Edit </a> 
+    </td>
+    <td mat-cell *matCellDef="let element"> 
       <a mat-stroked-button (click)="removeIndustry(element.uuid)"> Delete </a> 
     </td>
   </ng-container>

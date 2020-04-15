@@ -1,7 +1,7 @@
 <mat-card>
-    <mat-card-title>Add Station</mat-card-title>
-    <mat-card-content>
-      <form [formGroup]="stationForm" (ngSubmit)="createStation()">
+  <mat-card-title>{{ isNew ? 'Add Station' : 'Update Station' }}</mat-card-title>
+    <mat-card-content *ngIf="showForm">
+      <form [formGroup]="stationForm" (ngSubmit)="saveStation()">
         <table>
           <tr>
             <td>
@@ -240,7 +240,7 @@
           </tr>
           <button mat-button [disabled]="loading" class="btn btn-primary">
             <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
-            Add Station
+            {{ isNew ? 'Add Station' : 'Update Station' }}
           </button>
         </table>
       </form>

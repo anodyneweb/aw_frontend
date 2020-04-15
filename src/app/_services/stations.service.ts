@@ -21,12 +21,20 @@ export class StationsService {
     return this.http.get<Station[]>('http://ec2-3-6-144-180.ap-south-1.compute.amazonaws.com/api/station/', { headers: this.httpHeaderOptions });
   }
 
+  getStation(station_id) {
+    return this.http.get<Station>('http://ec2-3-6-144-180.ap-south-1.compute.amazonaws.com/api/station/'+ station_id, { headers: this.httpHeaderOptions });
+  }
+
   addStation(station_body){
-    return this.http.post<Station>('http://ec2-3-6-144-180.ap-south-1.compute.amazonaws.com/api/station/',station_body.value, {headers: this.httpHeaderOptions});
+    return this.http.post<Station>('http://ec2-3-6-144-180.ap-south-1.compute.amazonaws.com/api/station/',station_body.value, { headers: this.httpHeaderOptions });
+  }
+
+  updateStation(station_id, station_body) {
+    return this.http.put<Station>('http://ec2-3-6-144-180.ap-south-1.compute.amazonaws.com/api/station/' + station_id + '/', station_body.value, { headers: this.httpHeaderOptions });
   }
 
   deleteStation(station_id){
-    return this.http.delete<Station>('http://ec2-3-6-144-180.ap-south-1.compute.amazonaws.com/api/station/'+ station_id, {headers: this.httpHeaderOptions});
+    return this.http.delete<Station>('http://ec2-3-6-144-180.ap-south-1.compute.amazonaws.com/api/station/'+ station_id, { headers: this.httpHeaderOptions });
   }
 
 }

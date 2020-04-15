@@ -111,4 +111,9 @@ export class StationComponent implements OnInit {
         });
   }
 
+  editStation(station_id) {
+    let editUrl = "/edit/station/" + station_id;
+    this.router.navigate([editUrl]);
+  }
+
 }

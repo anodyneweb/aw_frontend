@@ -17,6 +17,7 @@ const routes: Routes = [
   { path: 'add_industry', component: ManageIndustriesComponent },
   { path: 'add_station', component: ManageStationsComponent },
   { path: 'edit/industry/:id', component: ManageIndustriesComponent },
+  { path: 'edit/station/:id', component: ManageStationsComponent },
   // otherwise redirect to home
   { path: '**', redirectTo: '/login' }
 ];
